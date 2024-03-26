@@ -1,3 +1,5 @@
+import { fonts } from "./fonts";
+import { Providers } from "./providers";
 import "./globals.css";
 
 export const metadata = {
@@ -11,8 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={fonts.rubik.variable}>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
