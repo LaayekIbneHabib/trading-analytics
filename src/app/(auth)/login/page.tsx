@@ -11,10 +11,12 @@ import {
   HStack,
   Input,
   Stack,
+  Flex,
   Text,
 } from "@chakra-ui/react";
-import { Logo } from "@/components/Logo";
-import { OAuthButtonGroup } from "@/app/(auth)/components/OAuthButtonGroup";
+import Logo from "@/components/ui/logo";
+import AuthBtnGroup from "../components/ui/auth-btn-group/authBtnGroup";
+import Link from "next/link";
 
 export default function Login() {
   return (
@@ -25,7 +27,9 @@ export default function Login() {
     >
       <Stack spacing="8">
         <Stack spacing="6">
-          <Logo />
+          <Flex justify="center">
+            <Logo size="70" color="teal" />
+          </Flex>
           <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
             <Heading size={{ base: "xs", md: "lg" }}>
               Login to your account
@@ -62,7 +66,9 @@ export default function Login() {
               </Text>
             </HStack>
             <Stack spacing="6">
-              <Button colorScheme="teal">Send</Button>
+              <Button colorScheme="teal">
+                <Link href="/overview">Send</Link>
+              </Button>
               <HStack>
                 <Divider />
                 <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
@@ -70,7 +76,7 @@ export default function Login() {
                 </Text>
                 <Divider />
               </HStack>
-              <OAuthButtonGroup />
+              <AuthBtnGroup />
             </Stack>
           </Stack>
         </Box>
