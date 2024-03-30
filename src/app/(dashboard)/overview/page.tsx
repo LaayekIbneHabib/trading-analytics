@@ -16,23 +16,14 @@ const Overview = () => {
     <div>
       <h1>{count}</h1>
       <Stack>
-        <Button
-          bg="gray.300"
-          _hover={{ bg: "gray.400" }}
-          onClick={() => dispatch(increment())}
-        >
+        <Button colorScheme="teal" onClick={() => dispatch(increment())}>
           Increment
         </Button>
-        <Button
-          bg="gray.300"
-          _hover={{ bg: "gray.400" }}
-          onClick={() => dispatch(decrement())}
-        >
+        <Button colorScheme="teal" onClick={() => dispatch(decrement())}>
           Decrement
         </Button>
         <Button
-          bg="gray.300"
-          _hover={{ bg: "gray.400" }}
+          colorScheme="teal"
           onClick={() => dispatch(incrementByAmount(10))}
         >
           Increment by 10

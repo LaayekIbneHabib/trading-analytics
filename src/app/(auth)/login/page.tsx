@@ -59,9 +59,9 @@ export default function Login() {
                 />
               </FormControl>
             </Stack>
-            <HStack justify="space-between">
+            <HStack spacing="1">
               <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
-                We have sent an email with a login link
+                Try again in{" "}
               </Text>
               <Text color="teal" fontWeight="700">
                 60s
