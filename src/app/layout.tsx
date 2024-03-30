@@ -1,4 +1,3 @@
-import { fonts } from "./fonts/fonts";
 import { Providers } from "./providers/providers";
 import "./globals.css";
 
@@ -13,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={fonts.rubik.variable}>
+    <html lang="en">
       <body>
         <Providers>{children}</Providers>
       </body>

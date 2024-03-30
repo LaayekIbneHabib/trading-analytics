@@ -1,7 +1,13 @@
 "use client";
-
+import { Provider } from "react-redux";
 import { ChakraProvider } from "@chakra-ui/react";
+import { store } from "../state/store";
+import theme from "../theme/theme";
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  return <ChakraProvider>{children}</ChakraProvider>;
+  return (
+    <Provider store={store}>
+      <ChakraProvider theme={theme}>{children}</ChakraProvider>
+    </Provider>
+  );
 }

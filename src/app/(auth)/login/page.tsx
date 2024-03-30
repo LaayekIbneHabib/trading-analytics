@@ -1,5 +1,7 @@
 "use client";
 
+import "@fontsource/raleway/400.css";
+import "@fontsource/open-sans/700.css";
 import {
   Box,
   Button,
@@ -14,9 +16,9 @@ import {
   Flex,
   Text,
 } from "@chakra-ui/react";
-import Logo from "@/components/ui/logo";
+import { Link } from "@chakra-ui/next-js";
+import Logo from "@/app/components/ui/logo/logo";
 import AuthBtnGroup from "../components/ui/auth-btn-group/authBtnGroup";
-import Link from "next/link";
 
 export default function Login() {
   return (
@@ -61,14 +63,16 @@ export default function Login() {
               <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
                 We have sent an email with a login link
               </Text>
-              <Text color="teal" fontWeight="medium">
+              <Text color="teal" fontWeight="700">
                 60s
               </Text>
             </HStack>
             <Stack spacing="6">
-              <Button colorScheme="teal">
-                <Link href="/overview">Send</Link>
-              </Button>
+              <Link href="/overview" _hover={{ textDecor: "none" }}>
+                <Button colorScheme="teal" w="100%">
+                  Send
+                </Button>
+              </Link>
               <HStack>
                 <Divider />
                 <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">

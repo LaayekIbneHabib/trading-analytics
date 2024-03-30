@@ -1,4 +1,4 @@
-import { FaUncharted } from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa";
 
 interface LogoProps {
   size: string;
@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = (props) => (
-  <FaUncharted size={props.size} color={props.color} />
+  <FaChartLine size={props.size} color={props.color} />
 );
 
 export default Logo;
