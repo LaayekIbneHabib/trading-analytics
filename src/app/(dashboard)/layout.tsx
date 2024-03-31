@@ -34,6 +34,7 @@ import {
 } from "react-icons/fi";
 import { FaChartLine, FaMoon, FaSun, FaBell } from "react-icons/fa";
 import { IconType } from "react-icons";
+import { usePathname } from "next/navigation";
 import { Link } from "@chakra-ui/next-js";
 
 interface LinkItemProps {
@@ -64,6 +65,8 @@ const LinkItems: Array<LinkItemProps> = [
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const pathname = usePathname();
+
   return (
     <Box
       transition="3s ease"
@@ -84,11 +87,19 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Flex>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
-          {link.name}
-        </NavItem>
-      ))}
+      <Flex direction="column" gap="2">
+        {LinkItems.map((link) => (
+          <NavItem
+            bg={pathname === link.href ? "teal" : ""}
+            color={pathname === link.href ? "white" : ""}
+            _hover={{ bg: "teal", color: "white" }}
+            key={link.name}
+            icon={link.icon}
+          >
+            {link.name}
+          </NavItem>
+        ))}
+      </Flex>
     </Box>
   );
 };
