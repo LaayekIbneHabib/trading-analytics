@@ -1,11 +1,7 @@
 import { FaChartLine } from "react-icons/fa";
+import { LogoProps } from "@/app/types/interfaces";
 
-interface LogoProps {
-  size: string;
-  color: string;
-}
-
-const Logo: React.FC<LogoProps> = (props) => (
+const Logo = (props: LogoProps) => (
   <FaChartLine size={props.size} color={props.color} />
 );
 

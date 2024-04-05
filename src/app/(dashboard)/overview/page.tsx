@@ -1,12 +1,12 @@
 "use client";
-import { RootState } from "@/app/state/store";
+import { Stack, Button } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "@/state/store";
 import {
   increment,
   decrement,
   incrementByAmount,
-} from "@/app/state/counter/counterSlice";
-import { Stack, Button } from "@chakra-ui/react";
+} from "@/state/counter/counterSlice";
 
 const Overview = () => {
   const count = useSelector((state: RootState) => state.counter.value);

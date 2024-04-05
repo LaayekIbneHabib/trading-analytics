@@ -1,7 +1,4 @@
 "use client";
-
-import "@fontsource/raleway/400.css";
-import "@fontsource/open-sans/700.css";
 import {
   Box,
   Button,
@@ -17,8 +14,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
-import Logo from "@/app/components/ui/logo/logo";
-import AuthBtnGroup from "../components/ui/auth-btn-group/authBtnGroup";
+import Logo from "@/app/components/logo";
+import AuthBtnGroup from "@/app/components/other-login";
 
 export default function Login() {
   return (
