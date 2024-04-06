@@ -12,15 +12,23 @@ export interface LinkItemProps {
   icon: IconType;
 }
 
-export interface NavItemProps extends FlexProps {
-  icon: IconType;
-  children: React.ReactNode;
+export interface TenseProps {
+  word: string;
+}
+
+export interface BtnProps extends ButtonProps {
+  name: any;
+}
+
+export interface SidebarProps extends BoxProps {
+  onClose: () => void;
 }
 
 export interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 
-export interface SidebarProps extends BoxProps {
-  onClose: () => void;
+export interface NavItemProps extends FlexProps {
+  icon: IconType;
+  children: React.ReactNode;
 }

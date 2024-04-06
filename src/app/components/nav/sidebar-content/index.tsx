@@ -1,5 +1,6 @@
 "use client";
-
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import {
   Box,
   CloseButton,
@@ -7,12 +8,10 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { FaChartLine } from "react-icons/fa";
 import { SidebarProps } from "@/app/types/interfaces";
-import { usePathname } from "next/navigation";
 import { LinkItems } from "@/app/components/nav/link-items";
 import { NavItem } from "@/app/components/nav/nav-items";
-import { FaChartLine } from "react-icons/fa";
 
 export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const pathname = usePathname();

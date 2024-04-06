@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import Logo from "@/app/components/logo";
+import Btn from "@/app/components/button";
 import AuthBtnGroup from "@/app/components/other-login";
 
 export default function Login() {
@@ -66,9 +67,7 @@ export default function Login() {
             </HStack>
             <Stack spacing="6">
               <Link href="/overview" _hover={{ textDecor: "none" }}>
-                <Button colorScheme="teal" w="100%">
-                  Send
-                </Button>
+                <Btn name="Send" w="100%" />
               </Link>
               <HStack>
                 <Divider />
