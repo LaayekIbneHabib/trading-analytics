@@ -1,17 +1,16 @@
-import { Button, useTheme } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import { BtnProps } from "@/app/types/interfaces";
 import { useButtonState } from "@/app/hooks/button";
-import { ToPast, ToPresentContinuous } from "@/app/components/tense";
+import { ToPast, ToPresentContinuous } from "@/app/components/text";
 
-const Btn = ({ children, name, type, ...props }: BtnProps) => {
-  const theme = useTheme();
+const Btn = ({ children, name, ...props }: BtnProps) => {
   const { isLoading, isDisabled, toggleButtonState } = useButtonState();
 
   const buttonStyles = {
-    backgroundColor: theme.colors.teal[500],
-    color: "white",
+    backgroundColor: "brand.primary",
+    color: "#ffffff",
     _hover: {
-      backgroundColor: theme.colors.teal[600],
+      backgroundColor: "brand.hover",
     },
     ...props.sx,
   };
@@ -21,13 +20,13 @@ const Btn = ({ children, name, type, ...props }: BtnProps) => {
       isLoading={isLoading}
       isDisabled={isDisabled}
       onClick={toggleButtonState}
-      loadingText={<ToPresentContinuous word={name} />}
+      loadingText={<ToPresentContinuous text={name} />}
       colorScheme="teal"
       variant="outline"
       {...props}
       sx={buttonStyles}
     >
-      {isDisabled && !isLoading ? <ToPast word={name} /> : name}
+      {isDisabled && !isLoading ? <ToPast text={name} /> : name}
       {children}
     </Button>
   );

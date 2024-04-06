@@ -16,6 +16,7 @@
     "@fontsource/open-sans": "^5.0.27",
     "@fontsource/raleway": "^5.0.17",
     "@reduxjs/toolkit": "^2.2.2",
+    "compromise": "^14.13.0",
     "framer-motion": "^11.0.20",
     "next": "14.1.4",
     "react": "^18",

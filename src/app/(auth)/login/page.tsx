@@ -1,7 +1,6 @@
 "use client";
 import {
   Box,
-  Button,
   Container,
   Divider,
   FormControl,
@@ -28,7 +27,7 @@ export default function Login() {
       <Stack spacing="8">
         <Stack spacing="6">
           <Flex justify="center">
-            <Logo size="70" color="teal" />
+            <Logo size="70" />
           </Flex>
           <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
             <Heading size={{ base: "xs", md: "lg" }}>
@@ -61,7 +60,7 @@ export default function Login() {
               <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
                 Try again in{" "}
               </Text>
-              <Text color="teal" fontWeight="700">
+              <Text color="brand.primary" fontWeight="700">
                 60s
               </Text>
             </HStack>

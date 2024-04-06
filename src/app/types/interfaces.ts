@@ -1,9 +1,8 @@
-import { FlexProps, BoxProps, ButtonProps } from "@chakra-ui/react";
+import { FlexProps, BoxProps, ButtonProps, ImageProps } from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
 export interface LogoProps {
   size: string;
-  color: string;
 }
 
 export interface LinkItemProps {
@@ -12,12 +11,12 @@ export interface LinkItemProps {
   icon: IconType;
 }
 
-export interface TenseProps {
-  word: string;
+export interface TextProps {
+  text: string;
 }
 
 export interface BtnProps extends ButtonProps {
-  name: any;
+  name: string;
 }
 
 export interface SidebarProps extends BoxProps {
