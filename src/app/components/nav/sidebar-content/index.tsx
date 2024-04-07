@@ -41,7 +41,7 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         <Flex alignItems="center" gap="4">
           <FaChartLine />
           <Text fontSize="lg" fontFamily="monospace" fontWeight="bold">
-            Tradingview
+            Analytics
           </Text>
         </Flex>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
@@ -49,9 +49,9 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       <Flex direction="column" gap="2">
         {LinkItems.map((link) => (
           <NavItem
-            bg={pathname === link.href ? "teal" : ""}
+            bg={pathname === link.href ? "brand.primary" : ""}
             color={pathname === link.href ? "white" : ""}
-            _hover={{ bg: "teal", color: "white" }}
+            _hover={{ bg: "brand.primary", color: "white" }}
             key={link.name}
             icon={link.icon}
           >

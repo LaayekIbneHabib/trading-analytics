@@ -1,3 +1,4 @@
+"use client";
 import { Button, ButtonGroup, VisuallyHidden } from "@chakra-ui/react";
 
 import googleIcon from "./assets/google.svg";

@@ -1,33 +1,63 @@
-import { FlexProps, BoxProps, ButtonProps, ImageProps } from "@chakra-ui/react";
+import {
+  FlexProps,
+  BoxProps,
+  ButtonProps,
+  InputProps,
+  LinkProps,
+} from "@chakra-ui/react";
 import { IconType } from "react-icons";
 
-export interface LogoProps {
+interface LogoProps {
   size: string;
 }
 
-export interface LinkItemProps {
+interface LinkItemProps {
   name: string;
   href: string;
   icon: IconType;
 }
 
-export interface TextProps {
+interface TextProps {
   text: string;
 }
 
-export interface BtnProps extends ButtonProps {
+interface BtnProps extends ButtonProps {
   name: string;
+  genre: string;
 }
 
-export interface SidebarProps extends BoxProps {
+interface EnterProps extends InputProps {
+  id: string;
+  genre: string;
+  placeholder: string;
+}
+
+interface NavigateProps extends LinkProps {
+  href: string;
+  children: React.ReactNode;
+}
+
+interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
 
-export interface MobileProps extends FlexProps {
+interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 
-export interface NavItemProps extends FlexProps {
+interface NavItemProps extends FlexProps {
   icon: IconType;
   children: React.ReactNode;
 }
+
+export type {
+  LogoProps,
+  LinkItemProps,
+  TextProps,
+  BtnProps,
+  EnterProps,
+  SidebarProps,
+  MobileProps,
+  NavItemProps,
+  NavigateProps,
+};

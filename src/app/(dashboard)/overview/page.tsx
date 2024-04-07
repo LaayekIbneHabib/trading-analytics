@@ -1,5 +1,5 @@
 "use client";
-import { Stack, Button } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/state/store";
 import {
@@ -7,6 +7,7 @@ import {
   decrement,
   incrementByAmount,
 } from "@/state/counter/counterSlice";
+import Btn from "@/app/components/button";
 
 const Overview = () => {
   const count = useSelector((state: RootState) => state.counter.value);
@@ -16,18 +17,21 @@ const Overview = () => {
     <div>
       <h1>{count}</h1>
       <Stack>
-        <Button colorScheme="teal" onClick={() => dispatch(increment())}>
-          Increment
-        </Button>
-        <Button colorScheme="teal" onClick={() => dispatch(decrement())}>
-          Decrement
-        </Button>
-        <Button
-          colorScheme="teal"
+        <Btn
+          name="Increment"
+          genre="button"
+          onClick={() => dispatch(increment())}
+        />
+        <Btn
+          name="Decrement"
+          genre="button"
+          onClick={() => dispatch(decrement())}
+        />
+        <Btn
+          name="Increment by 10"
+          genre="button"
           onClick={() => dispatch(incrementByAmount(10))}
-        >
-          Increment by 10
-        </Button>
+        />
       </Stack>
     </div>
   );

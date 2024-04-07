@@ -1,4 +1,3 @@
-"use client";
 import {
   Box,
   Container,
@@ -7,15 +6,15 @@ import {
   FormLabel,
   Heading,
   HStack,
-  Input,
   Stack,
   Flex,
   Text,
 } from "@chakra-ui/react";
-import { Link } from "@chakra-ui/next-js";
 import Logo from "@/app/components/logo";
 import Btn from "@/app/components/button";
+import Enter from "@/app/components/input";
 import AuthBtnGroup from "@/app/components/other-login";
+import Navigate from "@/app/components/link";
 
 export default function Login() {
   return (
@@ -46,12 +45,12 @@ export default function Login() {
           borderRadius={{ base: "none", sm: "xl" }}
         >
           <Stack spacing="6">
-            <Stack spacing="5">
+            <Stack>
               <FormControl isRequired>
                 <FormLabel htmlFor="email">Email</FormLabel>
-                <Input
+                <Enter
                   id="email"
-                  type="email"
+                  genre="email"
                   placeholder="john.doe@johndoehub.com"
                 />
               </FormControl>
@@ -65,9 +64,9 @@ export default function Login() {
               </Text>
             </HStack>
             <Stack spacing="6">
-              <Link href="/overview" _hover={{ textDecor: "none" }}>
-                <Btn name="Send" w="100%" />
-              </Link>
+              <Navigate href="/overview">
+                <Btn name="Send" genre="submit" w="100%" />
+              </Navigate>
               <HStack>
                 <Divider />
                 <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
