@@ -11,7 +11,7 @@ const providers = [
   { name: "Facebook", icon: facebookIcon.src },
 ];
 
-const OtherLogin = () => (
+const SocialLogin = () => (
   <ButtonGroup variant="secondary" spacing="4">
     {providers.map((provider) => (
       <Button key={provider.name} flexGrow={1} variant="outline">
@@ -22,4 +22,4 @@ const OtherLogin = () => (
   </ButtonGroup>
 );
 
-export default OtherLogin;
+export default SocialLogin;

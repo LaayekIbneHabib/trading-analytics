@@ -6,8 +6,8 @@ import {
   DrawerContent,
   useDisclosure,
 } from "@chakra-ui/react";
-import { SidebarContent } from "@/app/components/nav/sidebar-content";
-import { MobileNav } from "@/app/components/nav/mobile-nav";
+import { SidebarContent } from "@/app/components/composite/nav/sidebarContent";
+import { MobileNav } from "@/app/components/composite/nav/mobileNav";
 
 const Layout = ({ children }: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();

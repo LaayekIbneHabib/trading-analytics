@@ -3,15 +3,19 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   Box,
+  BoxProps,
   CloseButton,
   Flex,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaChartLine } from "react-icons/fa";
-import { SidebarProps } from "@/app/types/interfaces";
-import { LinkItems } from "@/app/components/nav/link-items";
-import { NavItem } from "@/app/components/nav/nav-items";
+import { LinkItems } from "@/app/components/composite/nav/linkItems";
+import { NavItem } from "@/app/components/composite/nav/navItems";
+
+interface SidebarProps extends BoxProps {
+  onClose: () => void;
+}
 
 export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const pathname = usePathname();

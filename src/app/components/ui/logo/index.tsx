@@ -1,6 +1,9 @@
 import { FaChartLine } from "react-icons/fa";
 import theme from "@/app/theme/theme";
-import { LogoProps } from "@/app/types/interfaces";
+
+interface LogoProps {
+  size: string;
+}
 
 const Logo = ({ size }: LogoProps) => {
   const logoStyles = {

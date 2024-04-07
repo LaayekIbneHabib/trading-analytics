@@ -1,5 +1,10 @@
-import { Box, Flex, Icon } from "@chakra-ui/react";
-import { NavItemProps } from "@/app/types/interfaces";
+import { Box, Flex, FlexProps, Icon } from "@chakra-ui/react";
+import { IconType } from "react-icons";
+
+interface NavItemProps extends FlexProps {
+  icon: IconType;
+  children: React.ReactNode;
+}
 
 export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
   return (

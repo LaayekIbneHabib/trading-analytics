@@ -1,11 +1,16 @@
 "use client";
-import { Button } from "@chakra-ui/react";
-import { BtnProps } from "@/app/types/interfaces";
+import { Button, ButtonProps } from "@chakra-ui/react";
 import { useButtonState } from "@/app/hooks/button";
-import { ToPast, ToPresentContinuous } from "@/app/components/text";
+import { useTenses } from "@/app/hooks/tenses";
+
+interface BtnProps extends ButtonProps {
+  name: string;
+  genre: string;
+}
 
 const Btn = ({ children, name, genre, ...props }: BtnProps) => {
   const { isLoading, isDisabled, toggleButtonState } = useButtonState();
+  const { ToPresentContinuous, ToPast } = useTenses({ text: name });
 
   const buttonStyles = {
     backgroundColor: "brand.primary",
@@ -23,13 +28,13 @@ const Btn = ({ children, name, genre, ...props }: BtnProps) => {
         isLoading={isLoading}
         isDisabled={isDisabled}
         onClick={toggleButtonState}
-        loadingText={<ToPresentContinuous text={name} />}
+        loadingText={ToPresentContinuous()}
         colorScheme="brand.primary"
         variant="outline"
         {...props}
         sx={buttonStyles}
       >
-        {isDisabled && !isLoading ? <ToPast text={name} /> : name}
+        {isDisabled && !isLoading ? ToPast() : name}
         {children}
       </Button>
     );

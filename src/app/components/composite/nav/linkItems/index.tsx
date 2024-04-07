@@ -1,4 +1,4 @@
-import { LinkItemProps } from "@/app/types/interfaces";
+import { IconType } from "react-icons";
 import {
   FiHome,
   FiTrendingUp,
@@ -6,6 +6,12 @@ import {
   FiStar,
   FiSettings,
 } from "react-icons/fi";
+
+interface LinkItemProps {
+  name: string;
+  href: string;
+  icon: IconType;
+}
 
 export const LinkItems: Array<LinkItemProps> = [
   { name: "Overview", href: "/overview", icon: FiHome },

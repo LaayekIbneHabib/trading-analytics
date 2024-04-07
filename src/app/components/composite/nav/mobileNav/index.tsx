@@ -1,6 +1,7 @@
 "use client";
 import {
   Flex,
+  FlexProps,
   IconButton,
   useColorMode,
   useColorModeValue,
@@ -17,8 +18,11 @@ import {
 } from "@chakra-ui/react";
 import { FaMoon, FaSun, FaBell } from "react-icons/fa";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
-import { MobileProps } from "@/app/types/interfaces";
-import Navigate from "@/app/components/link";
+import Navigate from "@/app/components/ui/navigate";
+
+interface MobileProps extends FlexProps {
+  onOpen: () => void;
+}
 
 let disableMenuBtn: any;
 

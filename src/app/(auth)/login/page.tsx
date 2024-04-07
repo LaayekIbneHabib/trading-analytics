@@ -10,11 +10,11 @@ import {
   Flex,
   Text,
 } from "@chakra-ui/react";
-import Logo from "@/app/components/logo";
-import Btn from "@/app/components/button";
-import Enter from "@/app/components/input";
-import AuthBtnGroup from "@/app/components/other-login";
-import Navigate from "@/app/components/link";
+import Logo from "@/app/components/ui/logo";
+import Btn from "@/app/components/ui/button";
+import Enter from "@/app/components/ui/input";
+import OtherLogin from "@/app/components/ui/otherLogin";
+import Navigate from "@/app/components/ui/navigate";
 
 export default function Login() {
   return (
@@ -74,7 +74,7 @@ export default function Login() {
                 </Text>
                 <Divider />
               </HStack>
-              <AuthBtnGroup />
+              <OtherLogin />
             </Stack>
           </Stack>
         </Box>

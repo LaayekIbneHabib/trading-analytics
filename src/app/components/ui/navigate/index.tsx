@@ -1,6 +1,10 @@
 "use client";
-import { Link } from "@chakra-ui/next-js";
-import { NavigateProps } from "@/app/types/interfaces";
+import { Link, LinkProps } from "@chakra-ui/next-js";
+
+interface NavigateProps extends LinkProps {
+  href: string;
+  children: React.ReactNode;
+}
 
 const Navigate = ({ children, href, ...props }: NavigateProps) => {
   const navigateStyles = {

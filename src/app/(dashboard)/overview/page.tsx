@@ -7,7 +7,7 @@ import {
   decrement,
   incrementByAmount,
 } from "@/state/counter/counterSlice";
-import Btn from "@/app/components/button";
+import Btn from "@/app/components/ui/button";
 
 const Overview = () => {
   const count = useSelector((state: RootState) => state.counter.value);
