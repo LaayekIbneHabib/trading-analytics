@@ -9,9 +9,10 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaChartLine } from "react-icons/fa";
+import Logo from "@/app/components/ui/logo";
 import { LinkItems } from "@/app/components/composite/nav/linkItems";
 import { NavItem } from "@/app/components/composite/nav/navItems";
+import Navigate from "@/app/components/ui/navigate";
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
@@ -43,24 +44,25 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Flex alignItems="center" gap="4">
-          <FaChartLine />
-          <Text fontSize="lg" fontFamily="monospace" fontWeight="bold">
-            Analytics
+          <Logo size="" />
+          <Text fontSize="lg" fontWeight="bold">
+            ...
           </Text>
         </Flex>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       <Flex direction="column" gap="2">
         {LinkItems.map((link) => (
-          <NavItem
-            bg={pathname === link.href ? "brand.primary" : ""}
-            color={pathname === link.href ? "white" : ""}
-            _hover={{ bg: "brand.primary", color: "white" }}
-            key={link.name}
-            icon={link.icon}
-          >
-            {link.name}
-          </NavItem>
+          <Navigate key={link.name} href={link.href}>
+            <NavItem
+              bg={pathname === link.href ? "brand.primary" : ""}
+              color={pathname === link.href ? "white" : ""}
+              _hover={{ bg: "brand.primary", color: "white" }}
+              icon={link.icon}
+            >
+              {link.name}
+            </NavItem>
+          </Navigate>
         ))}
       </Flex>
     </Box>

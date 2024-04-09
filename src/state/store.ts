@@ -1,10 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterSlice from "@/state/counter/counterSlice";
-import buttonSlice from "@/state/click/buttonSlice";
+import buttonSlice from "@/state/button/buttonSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterSlice,
     button: buttonSlice,
   },
 });

@@ -1,4 +1,4 @@
-import { FaChartLine } from "react-icons/fa";
+import { FiTrendingUp } from "react-icons/fi";
 import theme from "@/app/theme/theme";
 
 interface LogoProps {
@@ -12,7 +12,7 @@ const Logo = ({ size }: LogoProps) => {
     color: theme.colors.brand.primary,
   };
 
-  return <FaChartLine style={logoStyles} />;
+  return <FiTrendingUp style={logoStyles} />;
 };
 
 export default Logo;

@@ -15,7 +15,7 @@ interface LinkItemProps {
 
 export const LinkItems: Array<LinkItemProps> = [
   { name: "Overview", href: "/overview", icon: FiHome },
-  { name: "Trending", href: "/treding", icon: FiTrendingUp },
+  { name: "Trending", href: "/trending", icon: FiTrendingUp },
   { name: "Explore", href: "/explore", icon: FiCompass },
   { name: "Favourites", href: "/favourites", icon: FiStar },
   { name: "Settings", href: "/settings", icon: FiSettings },

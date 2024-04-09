@@ -2,7 +2,7 @@
 import { Link, LinkProps } from "@chakra-ui/next-js";
 
 interface NavigateProps extends LinkProps {
-  href: string;
+  href: any;
   children: React.ReactNode;
 }
 

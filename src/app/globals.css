@@ -6,4 +6,25 @@
 
 html {
   overflow-y: scroll;
+  background-color: black;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+}
+
+/* Global CSS file */
+::-webkit-scrollbar-thumb {
+  background-color: #3182ce; /* bg-rose-900 equivalent */
+  border-radius: 1rem; /* rounded-xl equivalent */
+}
+
+.task > ::-webkit-scrollbar-thumb {
+  background-color: #3182ce; /* bg-sky-500 equivalent */
+  border-radius: 1rem; /* rounded-xl equivalent */
 }

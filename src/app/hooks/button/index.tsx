@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading, setDisabled } from "@/state/click/buttonSlice";
+import { setLoading, setDisabled } from "@/state/button/buttonSlice";
 import { RootState } from "@/state/store";
 
 export const useButtonState = () => {

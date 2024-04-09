@@ -1,17 +1,17 @@
 import { extendTheme } from "@chakra-ui/react";
-import "@fontsource/open-sans/700.css";
-import "@fontsource/raleway/400.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto/400.css";
 
 const theme = extendTheme({
   colors: {
     brand: {
-      primary: "#319795",
-      hover: "#2C7A7B",
+      primary: "#3182CE",
+      hover: "#2B6CB0",
     },
   },
   fonts: {
-    heading: `'Open Sans', sans-serif`,
-    body: `'Raleway', sans-serif`,
+    heading: `'Roboto', sans-serif`,
+    body: `'Roboto', sans-serif`,
   },
 });
 
