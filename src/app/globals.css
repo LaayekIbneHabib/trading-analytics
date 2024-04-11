@@ -4,9 +4,10 @@
   margin: 0;
 }
 
-html {
+html,
+body {
   overflow-y: scroll;
-  background-color: black;
+  /* background-color: black; */
   color: white;
 }
 
@@ -20,11 +21,5 @@ html {
 
 /* Global CSS file */
 ::-webkit-scrollbar-thumb {
-  background-color: #3182ce; /* bg-rose-900 equivalent */
-  border-radius: 0rem; /* rounded-xl equivalent */
-}
-
-.task > ::-webkit-scrollbar-thumb {
-  background-color: #3182ce; /* bg-sky-500 equivalent */
-  border-radius: 1rem; /* rounded-xl equivalent */
+  background-color: #3182ce;
 }
