@@ -1,8 +1,8 @@
 "use client";
-import KanbanBoard from "@/app/components/composite/kanban/kanbanBoard";
+import Board from "@/app/components/composite/kanban/board";
 
 const Overview = () => {
-  return <KanbanBoard />;
+  return <Board />;
 };
 
 export default Overview;
