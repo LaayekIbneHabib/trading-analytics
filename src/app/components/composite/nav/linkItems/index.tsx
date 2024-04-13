@@ -6,17 +6,55 @@ import {
   FiStar,
   FiSettings,
 } from "react-icons/fi";
+import { GoDot } from "react-icons/go";
 
-interface LinkItemProps {
+type LinkItemTypes = {
   name: string;
-  href: string;
+  href?: string;
   icon: IconType;
-}
+  children?: LinkItemTypes[];
+};
 
-export const LinkItems: Array<LinkItemProps> = [
-  { name: "Overview", href: "/overview", icon: FiHome },
-  { name: "Trending", href: "/trending", icon: FiTrendingUp },
-  { name: "Explore", href: "/explore", icon: FiCompass },
-  { name: "Favourites", href: "/favourites", icon: FiStar },
-  { name: "Settings", href: "/settings", icon: FiSettings },
+export const LinkItems: LinkItemTypes[] = [
+  {
+    name: "Overview",
+    href: "/overview",
+    icon: FiHome,
+  },
+  {
+    name: "Trending",
+    icon: FiTrendingUp,
+    children: [
+      {
+        name: "Viral",
+        href: "/trending/viral",
+        icon: GoDot,
+      },
+      {
+        name: "Content marketing",
+        href: "/trending/content-marketing",
+        icon: GoDot,
+      },
+      {
+        name: "Email setup",
+        href: "/trending/email-setup",
+        icon: GoDot,
+      },
+    ],
+  },
+  {
+    name: "Explore",
+    href: "/explore",
+    icon: FiCompass,
+  },
+  {
+    name: "Favourites",
+    href: "/favourites",
+    icon: FiStar,
+  },
+  {
+    name: "Settings",
+    href: "/settings",
+    icon: FiSettings,
+  },
 ];

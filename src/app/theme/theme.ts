@@ -5,7 +5,8 @@ import "@fontsource/roboto/400.css";
 const theme = extendTheme({
   colors: {
     brand: {
-      primary: "#3182CE",
+      primary: "#5D87FF",
+      // #3182CE
       hover: "#2B6CB0",
     },
   },
