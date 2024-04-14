@@ -6,8 +6,7 @@ const theme = extendTheme({
   colors: {
     brand: {
       primary: "#5D87FF",
-      // #3182CE
-      hover: "#2B6CB0",
+      hover: "#6D93FF",
     },
   },
   fonts: {

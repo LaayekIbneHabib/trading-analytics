@@ -15,11 +15,10 @@ export const NavItem = () => {
     <React.Fragment>
       {items.map((item) =>
         !item.children ? (
-          <React.Fragment>
-            <Navigate key={item.name} href={item.href}>
+          <React.Fragment key={item.name}>
+            <Navigate href={item.href}>
               <Box textDecor="none" _focus={{ boxShadow: "none" }}>
                 <Flex
-                  // p="4"
                   pl={"4"}
                   pr={"4"}
                   pt={"3"}
@@ -30,7 +29,7 @@ export const NavItem = () => {
                   role="group"
                   cursor="pointer"
                   bg={pathname === item.href ? "brand.primary" : "transparent"}
-                  color={pathname === item.href ? "white" : "#283547"}
+                  color={pathname === item.href ? "white" : ""}
                   _hover={
                     pathname !== item.href
                       ? {
@@ -48,12 +47,10 @@ export const NavItem = () => {
             </Navigate>
           </React.Fragment>
         ) : (
-          <React.Fragment>
+          <React.Fragment key={item.name}>
             <Box textDecor="none" _focus={{ boxShadow: "none" }}>
               <Flex
-                // p={"4"}
                 pl={"4"}
-                // pr={"4"}
                 pt={"3"}
                 pb={"3"}
                 mx="4"
@@ -63,7 +60,7 @@ export const NavItem = () => {
                 role="group"
                 cursor="pointer"
                 bg={isClicked ? "brand.primary" : "transparent"}
-                color={isClicked ? "white" : "#283547"}
+                color={isClicked ? "white" : ""}
                 _hover={
                   !isClicked
                     ? {
@@ -87,7 +84,12 @@ export const NavItem = () => {
                 }
               </Flex>
             </Box>
-            {isClicked && <SubnavItem subitems={item.children} />}
+            {isClicked && (
+              <SubnavItem
+                key={`${item.name}-subnav-item`}
+                subitems={item.children}
+              />
+            )}
           </React.Fragment>
         )
       )}
@@ -101,13 +103,12 @@ const SubnavItem = ({ subitems }: any) => {
   return (
     <React.Fragment>
       {subitems.map((subitem: any) => (
-        <Navigate href={subitem.href}>
+        <Navigate key={subitem.name} href={subitem.href}>
           <Box
             style={{ textDecoration: "none" }}
             _focus={{ boxShadow: "none" }}
           >
             <Flex
-              // p={"4"}
               pl={"4"}
               pr={"4"}
               pt={"3"}
@@ -117,7 +118,7 @@ const SubnavItem = ({ subitems }: any) => {
               borderRadius="lg"
               role="group"
               cursor="pointer"
-              color={pathname === subitem.href ? "brand.primary" : "#283547"}
+              color={pathname === subitem.href ? "brand.primary" : ""}
               _hover={{ color: "brand.primary" }}
             >
               {<Icon mr="4" fontSize="12" as={subitem.icon} />}

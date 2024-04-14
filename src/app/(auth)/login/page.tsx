@@ -26,7 +26,7 @@ export default function Login() {
       <Stack spacing="8">
         <Stack spacing="6">
           <Flex justify="center">
-            <Logo size="70" />
+            <Logo size="5rem" />
           </Flex>
           <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
             <Heading size={{ base: "xs", md: "lg" }}>
@@ -50,6 +50,7 @@ export default function Login() {
                 <FormLabel htmlFor="email">Email</FormLabel>
                 <Enter
                   id="email"
+                  name="email"
                   genre="email"
                   placeholder="john.doe@johndoehub.com"
                 />

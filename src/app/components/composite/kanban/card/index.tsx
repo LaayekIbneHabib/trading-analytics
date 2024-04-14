@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, useColorMode } from "@chakra-ui/react";
 import { Draggable } from "react-beautiful-dnd";
 
 interface CardProps {
@@ -8,6 +8,7 @@ interface CardProps {
 }
 
 const Card = ({ id, index, content }: CardProps) => {
+  const { colorMode } = useColorMode();
   return (
     <Draggable draggableId={id} index={index}>
       {(provided) => (
@@ -16,7 +17,7 @@ const Card = ({ id, index, content }: CardProps) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           p={5}
-          bg="gray.200"
+          bg={colorMode === "light" ? "gray.200" : "rgba(255, 255, 255, 0.1)"}
           marginBottom={4}
           h="15rem"
           minW="15rem"

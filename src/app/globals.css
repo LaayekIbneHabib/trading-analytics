@@ -7,8 +7,8 @@
 html,
 body {
   overflow-y: scroll;
-  /* background-color: black; */
-  color: white;
+  background-color: #ffffff;
+  color: #ffffff;
 
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
@@ -21,19 +21,39 @@ body {
 
 html,
 body:focus {
-  outline: none !important;
+  outline: 0 !important;
 }
 
+/* For WebKit (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
   width: 4px;
-  display: none;
 }
 
 ::-webkit-scrollbar:horizontal {
   height: 8px;
 }
 
-/* Global CSS file */
 ::-webkit-scrollbar-thumb {
+  background-color: #3182ce;
+}
+
+/* For Firefox */
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #3182ce transparent;
+  }
+}
+
+/* For Edge and IE */
+*::-ms-scrollbar {
+  width: 4px;
+}
+
+*::-ms-scrollbar:horizontal {
+  height: 8px;
+}
+
+*::-ms-scrollbar-thumb {
   background-color: #3182ce;
 }
