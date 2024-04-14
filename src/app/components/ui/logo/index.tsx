@@ -1,5 +1,7 @@
-import { FiTrendingUp } from "react-icons/fi";
+// import { FiTrendingUp } from "react-icons/fi";
+import { IoIosAnalytics } from "react-icons/io";
 import theme from "@/app/theme/theme";
+import { Box } from "@chakra-ui/react";
 
 interface LogoProps {
   size: string;
@@ -12,7 +14,11 @@ const Logo = ({ size }: LogoProps) => {
     color: theme.colors.brand.primary,
   };
 
-  return <FiTrendingUp style={logoStyles} />;
+  return (
+    <Box bg="rgba(93, 135, 255, 0.1)" borderRadius="50%">
+      <IoIosAnalytics style={logoStyles} />
+    </Box>
+  );
 };
 
 export default Logo;

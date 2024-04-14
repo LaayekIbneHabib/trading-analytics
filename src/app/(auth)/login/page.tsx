@@ -2,19 +2,21 @@ import {
   Box,
   Container,
   Divider,
-  FormControl,
-  FormLabel,
   Heading,
   HStack,
   Stack,
   Flex,
   Text,
+  Button,
+  ButtonGroup,
+  Badge,
 } from "@chakra-ui/react";
+import { IoShieldCheckmarkOutline } from "react-icons/io5";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
+import theme from "@/app/theme/theme";
 import Logo from "@/app/components/ui/logo";
-import Btn from "@/app/components/ui/button";
-import Enter from "@/app/components/ui/input";
-import OtherLogin from "@/app/components/ui/otherLogin";
 import Navigate from "@/app/components/ui/navigate";
+import { brokerIcons, socialIcons } from "@/app/(auth)/assets/icons";
 
 export default function Login() {
   return (
@@ -29,54 +31,111 @@ export default function Login() {
             <Logo size="5rem" />
           </Flex>
           <Stack spacing={{ base: "2", md: "3" }} textAlign="center">
-            <Heading size={{ base: "xs", md: "lg" }}>
-              Login to your account
+            <Heading size={{ base: "xs", md: "md" }}>
+              Login with your broker
             </Heading>
-            <Text color="fg.muted">
-              We will send an email with a login link
-            </Text>
+            <Text color="bg.muted">...</Text>
           </Stack>
         </Stack>
         <Box
-          py={{ base: "0", sm: "8" }}
+          py={{ base: "8", sm: "8" }}
           px={{ base: "4", sm: "10" }}
-          bg={{ base: "transparent", sm: "bg.surface" }}
-          boxShadow={{ base: "none", sm: "md" }}
+          bg={{ base: "white", sm: "bg.surface" }}
+          boxShadow={{ base: "none", sm: "xs" }}
           borderRadius={{ base: "none", sm: "xl" }}
         >
-          <Stack spacing="6">
+          <Stack textAlign="center" spacing="6">
             <Stack>
-              <FormControl isRequired>
-                <FormLabel htmlFor="email">Email</FormLabel>
-                <Enter
-                  id="email"
-                  name="email"
-                  genre="email"
-                  placeholder="john.doe@johndoehub.com"
-                />
-              </FormControl>
+              <ButtonGroup variant="secondary" spacing="4">
+                {brokerIcons.map((brokerIcon) => (
+                  <Button
+                    h="5rem"
+                    w="100%"
+                    display="flex"
+                    flexDir="column"
+                    justifyContent="center"
+                    alignItems="center"
+                    gap="0.75rem"
+                    p={4}
+                    flexGrow={1}
+                    variant="outline"
+                    isDisabled={brokerIcon.status === "inactive" ? true : false}
+                  >
+                    {brokerIcon.icon}
+                    <Text fontSize="xs" fontWeight="400">
+                      {brokerIcon.name}
+                    </Text>
+                  </Button>
+                ))}
+              </ButtonGroup>
+              <Button
+                mt={2}
+                variant="outline"
+                pt={8}
+                pb={8}
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                gap="1rem"
+              >
+                <Flex alignItems="center" gap="1rem">
+                  <Box p={2} borderRadius="50%" bg="rgba(93, 135, 255, 0.1)">
+                    <IoShieldCheckmarkOutline
+                      style={{ color: "#5D87FF" }}
+                      size="2rem"
+                    />
+                  </Box>
+                  <Flex flexDir="column" textAlign="left" gap=".25rem">
+                    <Text
+                      color={theme.colors.brand.primary}
+                      fontSize="sm"
+                      fontWeight="700"
+                    >
+                      Is it safe to login with my broker?
+                    </Text>
+                    <Text color="bg.muted" fontSize="sm" fontWeight="400">
+                      Frequently asked questions
+                    </Text>
+                  </Flex>
+                </Flex>
+                <Box>
+                  <FaArrowRightFromBracket />
+                </Box>
+              </Button>
             </Stack>
-            <HStack spacing="1">
-              <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
-                Try again in{" "}
-              </Text>
-              <Text color="brand.primary" fontWeight="700">
-                60s
-              </Text>
-            </HStack>
-            <Stack spacing="6">
-              <Navigate href="/overview">
-                <Btn name="Send" genre="submit" w="100%" />
-              </Navigate>
+            <Stack spacing="5">
               <HStack>
                 <Divider />
                 <Text textStyle="sm" whiteSpace="nowrap" color="fg.muted">
-                  or continue with
+                  Don't have a broker account?
                 </Text>
                 <Divider />
               </HStack>
-              <OtherLogin />
+              <ButtonGroup variant="secondary" spacing="4">
+                {socialIcons.map((socialIcon) => (
+                  <Button
+                    w="100%"
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    leftIcon={socialIcon.icon}
+                    variant="outline"
+                  >
+                    <Navigate href="/overview">
+                      <Text fontSize="sm" fontWeight="400">
+                        {socialIcon.name}
+                      </Text>
+                    </Navigate>
+                  </Button>
+                ))}
+              </ButtonGroup>
             </Stack>
+            <Text fontSize="sm" fontWeight="400">
+              By proceeding, you agree to the{" "}
+              <span style={{ color: theme.colors.brand.primary }}>
+                terms and conditions.
+              </span>
+            </Text>
           </Stack>
         </Box>
       </Stack>
