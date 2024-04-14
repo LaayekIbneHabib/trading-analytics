@@ -49,6 +49,7 @@ export default function Login() {
               <ButtonGroup variant="secondary" spacing="4">
                 {brokerIcons.map((brokerIcon) => (
                   <Button
+                    key={brokerIcon.id}
                     h="5rem"
                     w="100%"
                     display="flex"
@@ -114,6 +115,7 @@ export default function Login() {
               <ButtonGroup variant="secondary" spacing="4">
                 {socialIcons.map((socialIcon) => (
                   <Button
+                    key={socialIcon.id}
                     w="100%"
                     display="flex"
                     justifyContent="center"

@@ -5,12 +5,12 @@ import Google from "@/app/(auth)/assets/icons/google";
 import Apple from "@/app/(auth)/assets/icons/apple";
 
 export const brokerIcons = [
-  { status: "active", name: "Upstox", icon: <Upstox /> },
-  { status: "inactive", name: "coming soon", icon: <Kite /> },
-  { status: "inactive", name: "coming soon", icon: <AngelOne /> },
+  { id: 1, status: "active", name: "Upstox", icon: <Upstox /> },
+  { id: 2, status: "inactive", name: "coming soon", icon: <Kite /> },
+  { id: 3, status: "inactive", name: "coming soon", icon: <AngelOne /> },
 ];
 
 export const socialIcons = [
-  { status: "active", name: "Google", icon: <Google /> },
-  { status: "active", name: "Apple", icon: <Apple /> },
+  { id: 1, status: "active", name: "Google", icon: <Google /> },
+  { id: 2, status: "active", name: "Apple", icon: <Apple /> },
 ];
