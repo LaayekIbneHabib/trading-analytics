@@ -11,7 +11,7 @@ const initialState: buttonSlice = {
   isDisabled: false,
 };
 
-export const buttonSlice = createSlice({
+export const buttonSlice: any = createSlice({
   name: "button",
   initialState,
   reducers: {
