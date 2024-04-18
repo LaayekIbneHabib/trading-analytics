@@ -1,5 +1,3 @@
-// default
-import React from "react";
 // internal
 import theme from "@/app/theme/theme";
 import Logo from "@/app/components/ui/logo";
@@ -17,7 +15,6 @@ import {
   Text,
   Button,
   ButtonGroup,
-  Badge,
 } from "@chakra-ui/react";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
@@ -51,9 +48,9 @@ export default function Login() {
           <Stack textAlign="center" spacing="6">
             <Stack>
               <ButtonGroup variant="secondary" spacing="4">
-                {brokerIcons.map((brokerIcon) => (
+                {brokerIcons.map((brokerIcon, index) => (
                   <Button
-                    key={brokerIcon.id}
+                    key={index}
                     h="5rem"
                     w="100%"
                     display="flex"
@@ -117,9 +114,9 @@ export default function Login() {
                 <Divider />
               </HStack>
               <ButtonGroup variant="secondary" spacing="4">
-                {socialIcons.map((socialIcon) => (
+                {socialIcons.map((socialIcon, index) => (
                   <Button
-                    key={socialIcon.id}
+                    key={index}
                     w="100%"
                     display="flex"
                     justifyContent="center"

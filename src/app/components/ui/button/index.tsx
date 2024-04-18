@@ -1,17 +1,18 @@
 "use client";
+
+// external
 import { Button, ButtonProps } from "@chakra-ui/react";
-import { useButtonState } from "@/app/hooks/button";
-import { useTenses } from "@/app/hooks/tenses";
+import { IconType } from "react-icons";
 
 interface BtnProps extends ButtonProps {
   name: string;
-  genre: string;
+  type: "button" | "submit" | "reset";
+  variant: "solid" | "outline" | "ghost" | "link";
+  isLoading: boolean;
+  icon?: IconType;
 }
 
-const Btn = ({ children, name, genre, ...props }: BtnProps) => {
-  const { isLoading, isDisabled, toggleButtonState } = useButtonState();
-  const { ToPresentContinuous, ToPast } = useTenses({ text: name });
-
+const CustomButton = ({ name, ...props }: BtnProps) => {
   const buttonStyles = {
     backgroundColor: "brand.primary",
     color: "#ffffff",
@@ -22,35 +23,11 @@ const Btn = ({ children, name, genre, ...props }: BtnProps) => {
     ...props.sx,
   };
 
-  if (genre === "submit") {
-    return (
-      <Button
-        isLoading={isLoading}
-        isDisabled={isDisabled}
-        onClick={toggleButtonState}
-        loadingText={ToPresentContinuous()}
-        colorScheme="brand.primary"
-        variant="outline"
-        {...props}
-        sx={buttonStyles}
-      >
-        {isDisabled && !isLoading ? ToPast() : name}
-        {children}
-      </Button>
-    );
-  }
-
   return (
-    <Button
-      colorScheme="brand.primary"
-      variant="outline"
-      {...props}
-      sx={buttonStyles}
-    >
+    <Button {...props} sx={buttonStyles}>
       {name}
-      {children}
     </Button>
   );
 };
 
-export default Btn;
+export default CustomButton;

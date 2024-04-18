@@ -1,5 +1,20 @@
+"use client";
+
+// internal
+import CustomButton from "@/app/components/ui/button";
+// external
+import { MdAlternateEmail } from "react-icons/md";
+
 const Explore = () => {
-  return <div>Explore</div>;
+  return (
+    <CustomButton
+      name="Send"
+      type="button"
+      variant="outline"
+      leftIcon={<MdAlternateEmail />}
+      isLoading={false}
+    />
+  );
 };
 
 export default Explore;

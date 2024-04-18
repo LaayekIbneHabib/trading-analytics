@@ -1,4 +1,9 @@
 "use client";
+
+// internal
+import { SidebarContent } from "@/app/components/composite/nav/sidebarContent";
+import { MobileNav } from "@/app/components/composite/nav/mobileNav";
+// external
 import {
   Box,
   useColorModeValue,
@@ -6,8 +11,6 @@ import {
   DrawerContent,
   useDisclosure,
 } from "@chakra-ui/react";
-import { SidebarContent } from "@/app/components/composite/nav/sidebarContent";
-import { MobileNav } from "@/app/components/composite/nav/mobileNav";
 
 interface LayoutProps {
   children: React.ReactNode;

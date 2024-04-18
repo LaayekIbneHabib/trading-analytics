@@ -1,3 +1,4 @@
+// external
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
@@ -10,7 +11,7 @@ const initialState: expandMenuSlice = {
 };
 
 export const expandMenuSlice = createSlice({
-  name: "expandMenu",
+  name: "expand menu",
   initialState,
   reducers: {
     setOpen: (state, action: PayloadAction<boolean>) => {

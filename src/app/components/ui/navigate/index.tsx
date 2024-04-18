@@ -1,8 +1,10 @@
 "use client";
+
+// external
 import { Link, LinkProps } from "@chakra-ui/next-js";
 
 interface NavigateProps extends LinkProps {
-  href: any;
+  href: string;
   children: React.ReactNode;
 }
 

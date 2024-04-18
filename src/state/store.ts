@@ -1,10 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import buttonSlice from "@/state/button/buttonSlice";
+// internal
 import expandMenuSlice from "@/state/expandMenu/expandMenuSlice";
+// external
+import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
   reducer: {
-    button: buttonSlice,
     expandMenu: expandMenuSlice,
   },
 });

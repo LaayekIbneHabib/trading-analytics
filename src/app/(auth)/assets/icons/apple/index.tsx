@@ -1,5 +1,3 @@
-import React from "react";
-
 const Apple = () => {
   return (
     <svg height="18" width="18" viewBox="-3.5 0 48 48" version="1.1">

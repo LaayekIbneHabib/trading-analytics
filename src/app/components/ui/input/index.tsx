@@ -1,14 +1,22 @@
 "use client";
+
+// external
 import { Input, InputProps } from "@chakra-ui/react";
 
-interface EnterProps extends InputProps {
+interface CustomInputProps extends InputProps {
   id: string;
   genre: string;
   name: string;
   placeholder: string;
 }
 
-const Enter = ({ id, genre, name, placeholder, ...props }: EnterProps) => {
+const CustomInput = ({
+  id,
+  genre,
+  name,
+  placeholder,
+  ...props
+}: CustomInputProps) => {
   return (
     <Input
       id={id}
@@ -20,4 +28,4 @@ const Enter = ({ id, genre, name, placeholder, ...props }: EnterProps) => {
   );
 };
 
-export default Enter;
+export default CustomInputProps;
