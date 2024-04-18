@@ -1,7 +1,8 @@
-// import { FiTrendingUp } from "react-icons/fi";
-import { IoIosAnalytics } from "react-icons/io";
+// internal
 import theme from "@/app/theme/theme";
+// external
 import { Box } from "@chakra-ui/react";
+import { IoIosAnalytics } from "react-icons/io";
 
 interface LogoProps {
   size: string;

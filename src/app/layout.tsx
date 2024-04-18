@@ -1,3 +1,4 @@
+// internal
 import { Providers } from "./providers/providers";
 import "./globals.css";
 

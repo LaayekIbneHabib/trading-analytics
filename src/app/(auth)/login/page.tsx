@@ -1,3 +1,11 @@
+// default
+import React from "react";
+// internal
+import theme from "@/app/theme/theme";
+import Logo from "@/app/components/ui/logo";
+import Navigate from "@/app/components/ui/navigate";
+import { brokerIcons, socialIcons } from "@/app/(auth)/assets/icons";
+// external
 import {
   Box,
   Container,
@@ -13,10 +21,6 @@ import {
 } from "@chakra-ui/react";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
-import theme from "@/app/theme/theme";
-import Logo from "@/app/components/ui/logo";
-import Navigate from "@/app/components/ui/navigate";
-import { brokerIcons, socialIcons } from "@/app/(auth)/assets/icons";
 
 export default function Login() {
   return (

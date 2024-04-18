@@ -1,4 +1,6 @@
+// external
 import { IconType } from "react-icons";
+import { GoDot } from "react-icons/go";
 import {
   FiHome,
   FiTrendingUp,
@@ -6,12 +8,11 @@ import {
   FiStar,
   FiSettings,
 } from "react-icons/fi";
-import { GoDot } from "react-icons/go";
 
 interface LinkItemTypes {
   name: string;
-  href: string;
-  icon: IconType;
+  href?: string;
+  icon?: IconType;
   children?: LinkItemTypes[];
 }
 
@@ -23,7 +24,6 @@ export const LinkItems: LinkItemTypes[] = [
   },
   {
     name: "Trending",
-    href: "",
     icon: FiTrendingUp,
     children: [
       {
@@ -55,7 +55,6 @@ export const LinkItems: LinkItemTypes[] = [
   },
   {
     name: "Settings",
-    href: "",
     icon: FiSettings,
     children: [
       {

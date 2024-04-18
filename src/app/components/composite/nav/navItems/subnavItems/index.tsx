@@ -1,44 +1,39 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+// default
 import { usePathname } from "next/navigation";
-import { Box, Flex, Icon } from "@chakra-ui/react";
+// internal
 import Navigate from "@/app/components/ui/navigate";
+// external
+import { Flex, Icon } from "@chakra-ui/react";
 
-const SubnavItems = ({ isOpen, setOpen, subnavitems }: any) => {
+interface SubnavItemsProps {
+  items: any[];
+}
+
+const SubnavItems = ({ items }: SubnavItemsProps) => {
   const pathname = usePathname();
-
   return (
-    <React.Fragment>
-      {isOpen && (
-        <>
-          {subnavitems.map((subnavitem: any) => (
-            <Navigate key={subnavitem.name} href={subnavitem.href}>
-              <Box
-                style={{ textDecoration: "none" }}
-                _focus={{ boxShadow: "none" }}
-              >
-                <Flex
-                  pl={"4"}
-                  pr={"4"}
-                  pt={"3"}
-                  pb={"3"}
-                  mx="4"
-                  align="center"
-                  borderRadius="lg"
-                  role="group"
-                  cursor="pointer"
-                  color={pathname === subnavitem.href ? "brand.primary" : ""}
-                  _hover={{ color: "brand.primary" }}
-                >
-                  {<Icon mr="4" fontSize="12" as={subnavitem.icon} />}
-                  {subnavitem.name}
-                </Flex>
-              </Box>
-            </Navigate>
-          ))}
-        </>
-      )}
-    </React.Fragment>
+    <>
+      {items.map((item: any, index: number) => (
+        <Navigate href={item.href} key={index}>
+          <Flex
+            px="4"
+            py="3"
+            mx="4"
+            align="center"
+            borderRadius="lg"
+            role="group"
+            cursor="pointer"
+            color={pathname === item.href ? "brand.primary" : ""}
+            _hover={{ color: "brand.primary" }}
+          >
+            {<Icon mr="4" fontSize="12" as={item.icon} />}
+            {item.name}
+          </Flex>
+        </Navigate>
+      ))}
+    </>
   );
 };
 
