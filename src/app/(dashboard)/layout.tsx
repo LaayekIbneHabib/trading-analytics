@@ -10,6 +10,7 @@ import {
   Drawer,
   DrawerContent,
   useDisclosure,
+  Container,
 } from "@chakra-ui/react";
 
 interface LayoutProps {
@@ -38,8 +39,8 @@ const Layout = ({ children }: LayoutProps) => {
         </DrawerContent>
       </Drawer>
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-        {children}
+      <Box ml={{ base: 0, md: 60 }} py="4">
+        <Container maxW="container.2xl">{children}</Container>
       </Box>
     </Box>
   );

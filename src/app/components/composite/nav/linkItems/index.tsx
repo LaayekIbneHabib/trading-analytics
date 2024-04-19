@@ -8,6 +8,7 @@ import {
   FiStar,
   FiSettings,
 } from "react-icons/fi";
+import { CgPerformance } from "react-icons/cg";
 
 interface LinkItemTypes {
   name: string;
@@ -23,22 +24,22 @@ export const LinkItems: LinkItemTypes[] = [
     icon: FiHome,
   },
   {
-    name: "Trending",
-    icon: FiTrendingUp,
+    name: "Performance",
+    icon: CgPerformance,
     children: [
       {
-        name: "Viral",
-        href: "/trending/viral",
-        icon: GoDot,
+        name: "Returns",
+        href: "/performance/returns",
+        icon: FiTrendingUp,
       },
       {
         name: "Content marketing",
-        href: "/trending/content-marketing",
+        href: "/performance/content-marketing",
         icon: GoDot,
       },
       {
         name: "Email setup",
-        href: "/trending/email-setup",
+        href: "/performance/email-setup",
         icon: GoDot,
       },
     ],

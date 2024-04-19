@@ -1,4 +1,9 @@
 "use client";
+
+import CustomButton from "@/app/components/ui/button";
+// internal
+import Navigate from "@/app/components/ui/navigate";
+// external
 import {
   Flex,
   FlexProps,
@@ -15,10 +20,19 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  Button,
 } from "@chakra-ui/react";
 import { FaMoon, FaSun, FaBell } from "react-icons/fa";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
-import Navigate from "@/app/components/ui/navigate";
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;
@@ -58,12 +72,23 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
           onClick={toggleColorMode}
         />
-        <IconButton
-          size="md"
-          variant="outline"
-          aria-label="open menu"
-          icon={<FaBell />}
-        />
+        <Popover>
+          <PopoverTrigger>
+            <IconButton
+              size="md"
+              variant="outline"
+              aria-label="open menu"
+              icon={<FaBell />}
+            />
+          </PopoverTrigger>
+          <PopoverContent mt={2}>
+            <PopoverCloseButton />
+            <PopoverHeader>Notifications</PopoverHeader>
+            <PopoverBody>
+              Are you sure you want to have that milkshake?
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
         <Flex alignItems={"center"}>
           <Menu>
             <MenuButton

@@ -13,6 +13,23 @@ const theme = extendTheme({
     heading: `'Roboto', sans-serif`,
     body: `'Roboto', sans-serif`,
   },
+  breakpoints: {
+    base: "0em",
+    sm: "40em",
+    md: "63em",
+    lg: "82em",
+    xl: "106em",
+    "2xl": "127em",
+  },
+  sizes: {
+    container: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1792px",
+    },
+  },
 });
 
 export default theme;
