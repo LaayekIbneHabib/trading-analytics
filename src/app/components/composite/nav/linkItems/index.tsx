@@ -33,8 +33,8 @@ export const LinkItems: LinkItemTypes[] = [
         icon: FiTrendingUp,
       },
       {
-        name: "Content marketing",
-        href: "/performance/content-marketing",
+        name: "Risk to reward",
+        href: "/performance/risk-to-reward",
         icon: GoDot,
       },
       {

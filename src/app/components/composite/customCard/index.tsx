@@ -1,3 +1,5 @@
+// default
+import { ComponentType } from "react";
 // external
 import { Box, Text, useColorMode } from "@chakra-ui/react";
 
@@ -5,7 +7,7 @@ interface CustomCardProps {
   type: string;
   heading: string;
   label: string;
-  value: number;
+  value: number[];
   caption: string;
 }
 
@@ -15,6 +17,9 @@ interface ReturnCustomCardProps {
 
 const CustomCard = ({ data }: ReturnCustomCardProps) => {
   const { colorMode } = useColorMode();
+
+  const forTypeRatio = data.value[0] + ":" + data.value[1];
+  const forTypePercentage = data.value[0] + "%";
 
   return (
     <Box
@@ -35,8 +40,8 @@ const CustomCard = ({ data }: ReturnCustomCardProps) => {
       </Text>
       <Text>{data.label}</Text>
       <Text fontSize="7rem" fontWeight="700" color="brand.primary">
-        {data.value}
-        {data.type === "percentage" ? "%" : ""}
+        {data.type === "percentage" ? forTypePercentage : ""}
+        {data.type === "ratio" ? forTypeRatio : ""}
       </Text>
       <Text>{data.caption}</Text>
     </Box>

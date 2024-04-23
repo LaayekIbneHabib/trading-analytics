@@ -8,32 +8,32 @@ import MultipleXAxis from "@/app/components/composite/charts/multpileXAxis";
 import VerticalBar from "@/app/components/composite/charts/verticalBar";
 import XAxis from "@/app/components/composite/charts/xAxis";
 
-const Returns = () => {
-  const percentageReturns = {
-    type: "percentage",
-    heading: "Your returns %",
-    label: "You are up",
-    value: [35],
-    caption: "in 1 month, 3 weeks and 5 days",
+const RiskToReward = () => {
+  const riskToRewardratio = {
+    type: "ratio",
+    heading: "Average risk to reward ratio",
+    label: "some text",
+    value: [1, 2],
+    caption: "some text",
   };
 
-  const ranking = {
+  const averageRiskPerTrade = {
     type: "percentage",
-    heading: "Your ranking",
-    label: "You are top",
-    value: [1.3],
-    caption: "of the traders",
+    heading: "Average risk per trade",
+    label: "some text",
+    value: [1.7],
+    caption: "some text",
   };
 
   return (
     <GridLayout>
-      <CustomCard data={percentageReturns} />
-      <VerticalBar />
-      <XAxis />
-      <CustomCard data={ranking} />
+      <CustomCard data={riskToRewardratio} />
       <MultipleXAxis />
+      <XAxis />
+      <CustomCard data={averageRiskPerTrade} />
+      <VerticalBar />
     </GridLayout>
   );
 };
 
-export default Returns;
+export default RiskToReward;
