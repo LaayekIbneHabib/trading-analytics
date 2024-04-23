@@ -17,7 +17,7 @@ const Card = ({ id, index, content }: CardProps) => {
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           p={5}
-          bg={colorMode === "light" ? "gray.200" : "rgba(255, 255, 255, 0.1)"}
+          bg={colorMode === "light" ? "#ffffff" : "rgba(255, 255, 255, 0.1)"}
           marginBottom={4}
           h="15rem"
           minW="15rem"
