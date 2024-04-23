@@ -34,7 +34,7 @@ const CustomCard = ({ data }: ReturnCustomCardProps) => {
         {data.heading}
       </Text>
       <Text>{data.label}</Text>
-      <Text fontSize="10rem" fontWeight="700" color="brand.primary">
+      <Text fontSize="7rem" fontWeight="700" color="brand.primary">
         {data.value}
         {data.type === "percentage" ? "%" : ""}
       </Text>
