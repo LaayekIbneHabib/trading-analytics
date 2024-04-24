@@ -1,6 +1,8 @@
+// internal
+import Card from "@/app/components/composite/kanban/card";
+// external
 import { Box } from "@chakra-ui/react";
 import { Droppable } from "react-beautiful-dnd";
-import Card from "@/app/components/composite/kanban/card";
 
 interface ColumnProps {
   column: {

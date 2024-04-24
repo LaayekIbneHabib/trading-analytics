@@ -40,7 +40,7 @@ const Layout = ({ children }: LayoutProps) => {
       </Drawer>
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} py="4" overflowX="hidden">
-        <Container maxW="container.2xl">{children}</Container>
+        <Container maxW="container.xl">{children}</Container>
       </Box>
     </Box>
   );

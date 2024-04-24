@@ -1,5 +1,7 @@
+import FileUpload from "@/app/components/composite/fileUpload";
+
 const Favourites = () => {
-  return <div>Favourites</div>;
+  return <FileUpload />;
 };
 
 export default Favourites;

@@ -1,7 +1,10 @@
+// default
 import { useState } from "react";
-import { SimpleGrid, ChakraProvider } from "@chakra-ui/react";
-import { DragDropContext } from "react-beautiful-dnd";
+// internal
 import Column from "@/app/components/composite/kanban/column";
+// external
+import { SimpleGrid } from "@chakra-ui/react";
+import { DragDropContext } from "react-beautiful-dnd";
 
 interface Item {
   id: string;
