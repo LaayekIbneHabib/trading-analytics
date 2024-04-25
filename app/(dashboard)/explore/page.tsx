@@ -1,7 +1,7 @@
 "use client";
 
 // internal
-import CustomButton from "@/app/components/ui/customButton";
+import CustomButton from "../../components/ui/customButton";
 // external
 import { MdAlternateEmail } from "react-icons/md";
 

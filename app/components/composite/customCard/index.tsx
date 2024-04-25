@@ -1,5 +1,3 @@
-// default
-import { ComponentType } from "react";
 // external
 import { Box, Text, useColorMode } from "@chakra-ui/react";
 

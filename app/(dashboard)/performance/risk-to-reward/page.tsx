@@ -1,12 +1,12 @@
 "use client";
 
 // internal
-import GridLayout from "@/app/components/composite/gridLayout";
-import CustomCard from "@/app/components/composite/customCard";
+import GridLayout from "../../../components/composite/gridLayout";
+import CustomCard from "../../../components/composite/customCard";
 // external
-import MultipleXAxis from "@/app/components/composite/charts/multpileXAxis";
-import VerticalBar from "@/app/components/composite/charts/verticalBar";
-import XAxis from "@/app/components/composite/charts/xAxis";
+import MultipleXAxis from "../../../components/composite/charts/multpileXAxis";
+import VerticalBar from "../../../components/composite/charts/verticalBar";
+import XAxis from "../../../components/composite/charts/xAxis";
 
 const RiskToReward = () => {
   const riskToRewardratio = {

@@ -1,15 +1,12 @@
 "use client";
 
+// default
 import React, { useState } from "react";
-import {
-  useDropzone,
-  DropzoneRootProps,
-  DropzoneInputProps,
-} from "react-dropzone";
+// external
+import { Box, Text } from "@chakra-ui/react";
+import { useDropzone } from "react-dropzone";
 
-interface FileUploadProps {}
-
-const FileUpload: React.FC<FileUploadProps> = () => {
+const FileUpload = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles: File[]) => {
@@ -19,15 +16,15 @@ const FileUpload: React.FC<FileUploadProps> = () => {
   });
 
   return (
-    <div {...getRootProps()}>
+    <Box {...getRootProps()}>
       <input {...getInputProps()} />
-      <p>Drag and drop files here or click to browse.</p>
+      <Text as="p">Drag and drop files here or click to browse.</Text>
       <ul>
         {uploadedFiles.map((file: File) => (
           <li key={file.name}>{file.name}</li>
         ))}
       </ul>
-    </div>
+    </Box>
   );
 };
 
