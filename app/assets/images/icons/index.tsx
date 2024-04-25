@@ -1,9 +1,9 @@
 // internal
-import Upstox from "@/app/assets/images/icons/upstox";
-import Kite from "@/app/assets/images/icons/kite";
-import AngelOne from "@/app/assets/images/icons/angelOne";
-import Google from "@/app/assets/images/icons/google";
-import Apple from "@/app/assets/images/icons/apple";
+import Upstox from "./upstox";
+import Kite from "./kite";
+import AngelOne from "./angelOne";
+import Google from "./google";
+import Apple from "./apple";
 
 export const brokerIcons = [
   { status: "active", name: "Upstox", icon: <Upstox /> },

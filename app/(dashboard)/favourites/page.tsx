@@ -1,4 +1,4 @@
-import FileUpload from "@/app/components/composite/fileUpload";
+import FileUpload from "../../components/composite/fileUpload";
 
 const Favourites = () => {
   return <FileUpload />;
