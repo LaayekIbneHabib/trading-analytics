@@ -1,5 +1,5 @@
 // interal
-import theme from "@/app/theme/theme";
+import theme from "../../../../theme/theme";
 import { useColorMode } from "@chakra-ui/react";
 // external
 import { Chart as ChartJS, defaults } from "chart.js/auto";

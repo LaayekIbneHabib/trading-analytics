@@ -1,8 +1,8 @@
 // internal
-import theme from "@/app/theme/theme";
-import Logo from "@/app/components/ui/logo";
-import CustomLink from "@/app/components/ui/customLink";
-import { brokerIcons, socialIcons } from "@/app/assets/images/icons";
+import theme from "../../theme/theme";
+import Logo from "../../assets/images/icons/logo";
+import CustomLink from "../../components/ui/customLink";
+import { brokerIcons, socialIcons } from "../../assets/images/icons";
 // external
 import {
   Box,
