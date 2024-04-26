@@ -1,6 +1,7 @@
 // internal
-import { Providers } from "./providers/providers";
+import { Provider } from "./provider";
 import "./globals.css";
+// external
 
 export const metadata = {
   title: "Next.js trading analytics",
@@ -15,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>{children}</Providers>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
