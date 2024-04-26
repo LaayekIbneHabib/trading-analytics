@@ -1,5 +1,5 @@
 // internal
-import { authConfig } from "../../../lib/auth";
+import { authConfig } from "../../../../lib/auth";
 // external
 import NextAuth from "next-auth";
 
