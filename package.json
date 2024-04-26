@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.12",
     "chart.js": "^4.4.2",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.0.20",
     "next": "14.1.4",
     "react": "^18",
