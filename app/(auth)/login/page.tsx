@@ -1,7 +1,8 @@
+"use client";
+
 // internal
 import theme from "../../theme/theme";
 import Logo from "../../assets/images/icons/logo";
-import CustomLink from "../../components/ui/customLink";
 import { brokerIcons, socialIcons } from "../../assets/images/icons";
 // external
 import {
@@ -16,10 +17,15 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/react";
+import { signIn } from "next-auth/react";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 export default function Login() {
+  const handleSignIn = () => {
+    signIn("google");
+  };
+
   return (
     <Container
       maxW="lg"
@@ -123,12 +129,11 @@ export default function Login() {
                     alignItems="center"
                     leftIcon={socialIcon.icon}
                     variant="outline"
+                    onClick={() => handleSignIn()}
                   >
-                    <CustomLink href="/overview">
-                      <Text fontSize="sm" fontWeight="400">
-                        {socialIcon.name}
-                      </Text>
-                    </CustomLink>
+                    <Text fontSize="sm" fontWeight="400">
+                      {socialIcon.name}
+                    </Text>
                   </Button>
                 ))}
               </ButtonGroup>
