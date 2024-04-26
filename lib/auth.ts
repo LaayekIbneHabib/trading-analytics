@@ -6,6 +6,7 @@ import { useSession } from "next-auth/react";
 import GoogleProvider from "next-auth/providers/google";
 
 export const authConfig: NextAuthOptions = {
+  secret: process.env.AUTH_SECRET as string,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID as string,
@@ -19,7 +20,7 @@ export async function loginIsRequiredServer() {
   if (!session) return redirect("/");
 }
 
-export function LoginIsRequiredClient() {
+export function loginIsRequiredClient() {
   if (typeof window !== "undefined") {
     const session = useSession();
     const router = useRouter();
