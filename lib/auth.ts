@@ -19,7 +19,7 @@ export async function loginIsRequiredServer() {
   if (!session) return redirect("/");
 }
 
-export function LoginIsRequiredClient() {
+export function loginIsRequiredClient() {
   if (typeof window !== "undefined") {
     const session = useSession();
     const router = useRouter();

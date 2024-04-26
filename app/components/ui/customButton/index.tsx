@@ -2,30 +2,16 @@
 
 // external
 import { Button, ButtonProps } from "@chakra-ui/react";
-import { IconType } from "react-icons";
 
-interface BtnProps extends ButtonProps {
-  name: string;
-  type: "button" | "submit" | "reset";
-  variant: "solid" | "outline" | "ghost" | "link";
-  isLoading: boolean;
-  icon?: IconType;
+interface CustomButtonProps extends ButtonProps {
+  onClick: React.MouseEventHandler;
+  label: string;
 }
 
-const CustomButton = ({ name, ...props }: BtnProps) => {
-  const buttonStyles = {
-    backgroundColor: "brand.primary",
-    color: "#ffffff",
-    border: "none",
-    _hover: {
-      backgroundColor: "brand.hover",
-    },
-    ...props.sx,
-  };
-
+const CustomButton = ({ onClick, label, ...props }: CustomButtonProps) => {
   return (
-    <Button {...props} sx={buttonStyles}>
-      {name}
+    <Button onClick={onClick} {...props}>
+      {label}
     </Button>
   );
 };

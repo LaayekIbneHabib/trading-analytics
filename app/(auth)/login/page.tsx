@@ -1,9 +1,10 @@
-"use client";
-
+// default
+import { redirect } from "next/navigation";
 // internal
+import { authConfig } from "../../../lib/auth";
 import theme from "../../theme/theme";
 import Logo from "../../assets/images/icons/logo";
-import { brokerIcons, socialIcons } from "../../assets/images/icons";
+import { brokerIcons } from "../../assets/images/icons";
 // external
 import {
   Box,
@@ -17,14 +18,15 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/react";
-import { signIn } from "next-auth/react";
+import { getServerSession } from "next-auth";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
+import SigninWithGoogleButton from "./signinWithGoogleButton";
 
-export default function Login() {
-  const handleSignIn = () => {
-    signIn("google");
-  };
+export default async function Login() {
+  const session = await getServerSession(authConfig);
+  console.log("Session: ", session);
+  if (session) return redirect("/overview");
 
   return (
     <Container
@@ -120,22 +122,7 @@ export default function Login() {
                 <Divider />
               </HStack>
               <ButtonGroup variant="secondary" spacing="4">
-                {socialIcons.map((socialIcon, index) => (
-                  <Button
-                    key={index}
-                    w="100%"
-                    display="flex"
-                    justifyContent="center"
-                    alignItems="center"
-                    leftIcon={socialIcon.icon}
-                    variant="outline"
-                    onClick={() => handleSignIn()}
-                  >
-                    <Text fontSize="sm" fontWeight="400">
-                      {socialIcon.name}
-                    </Text>
-                  </Button>
-                ))}
+                <SigninWithGoogleButton />
               </ButtonGroup>
             </Stack>
             <Text fontSize="sm" fontWeight="400">

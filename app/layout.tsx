@@ -1,5 +1,5 @@
 // internal
-import { Providers } from "./providers/providers";
+import Providers from "./providers/providers";
 import "./globals.css";
 
 export const metadata = {
