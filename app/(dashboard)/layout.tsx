@@ -3,7 +3,7 @@
 // default
 import React from "react";
 // internal
-import { authConfig, loginIsRequiredServer } from "../lib/auth";
+import { authConfig, loginIsRequiredServer } from "../../lib/auth";
 import { SidebarContent } from "../components/composite/nav/sidebarContent";
 import { MobileNav } from "../components/composite/nav/mobileNav";
 // external
