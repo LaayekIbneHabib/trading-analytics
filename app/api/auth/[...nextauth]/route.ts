@@ -1,5 +1,7 @@
+// internal
 import { authConfig } from "../../../lib/auth";
-import NextAuth from "next-auth/next";
+// external
+import NextAuth from "next-auth";
 
 const handler = NextAuth(authConfig);
 
