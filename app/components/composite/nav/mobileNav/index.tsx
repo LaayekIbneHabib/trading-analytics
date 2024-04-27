@@ -26,7 +26,6 @@ import {
   PopoverBody,
   PopoverCloseButton,
 } from "@chakra-ui/react";
-import { signOut } from "next-auth/react";
 import { FaMoon, FaSun, FaBell } from "react-icons/fa";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
 
@@ -121,7 +120,7 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem onClick={() => signOut()}>Sign out</MenuItem>
+              <MenuItem>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

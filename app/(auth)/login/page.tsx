@@ -1,10 +1,6 @@
-// default
-import { redirect } from "next/navigation";
 // internal
-import { authConfig } from "../../../lib/auth";
 import theme from "../../theme/theme";
 import Logo from "../../assets/images/icons/logo";
-import { brokerIcons } from "../../assets/images/icons";
 // external
 import {
   Box,
@@ -18,16 +14,12 @@ import {
   Button,
   ButtonGroup,
 } from "@chakra-ui/react";
-import { getServerSession } from "next-auth";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
-import SigninWithGoogleButton from "./signinWithGoogleButton";
+import SigninWithAStockBrokerButton from "../authButtons/brokers";
+import SigninWithASocialAccountButton from "../authButtons/socials";
 
 export default async function Login() {
-  const session = await getServerSession(authConfig);
-  console.log("Session: ", session);
-  if (session) return redirect("/overview");
-
   return (
     <Container
       maxW="lg"
@@ -56,27 +48,7 @@ export default async function Login() {
           <Stack textAlign="center" spacing="6">
             <Stack>
               <ButtonGroup variant="secondary" spacing="4">
-                {brokerIcons.map((brokerIcon, index) => (
-                  <Button
-                    key={index}
-                    h="5rem"
-                    w="100%"
-                    display="flex"
-                    flexDir="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    gap="0.75rem"
-                    p={4}
-                    flexGrow={1}
-                    variant="outline"
-                    isDisabled={brokerIcon.status === "inactive" ? true : false}
-                  >
-                    {brokerIcon.icon}
-                    <Text fontSize="xs" fontWeight="400">
-                      {brokerIcon.name}
-                    </Text>
-                  </Button>
-                ))}
+                <SigninWithAStockBrokerButton />
               </ButtonGroup>
               <Button
                 mt={2}
@@ -122,7 +94,7 @@ export default async function Login() {
                 <Divider />
               </HStack>
               <ButtonGroup variant="secondary" spacing="4">
-                <SigninWithGoogleButton />
+                <SigninWithASocialAccountButton />
               </ButtonGroup>
             </Stack>
             <Text fontSize="sm" fontWeight="400">
