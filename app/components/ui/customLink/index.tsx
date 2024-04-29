@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
 // external
-import { Link, LinkProps } from "@chakra-ui/next-js";
+import { Link, LinkProps } from '@chakra-ui/next-js';
 
 interface CustomLinkProps extends LinkProps {
   href: string;
@@ -10,7 +10,7 @@ interface CustomLinkProps extends LinkProps {
 
 const CustomLink = ({ children, href, ...props }: CustomLinkProps) => {
   const styles = {
-    _hover: { textDecor: "none" },
+    _hover: { textDecor: 'none' },
   };
   return (
     <Link href={href} {...props} sx={styles}>

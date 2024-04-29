@@ -87,6 +87,7 @@ export default async function Login() {
               </HStack>
               {socialPlatforms.map(socialPlatform => (
                 <form
+                  key={socialPlatform.id}
                   action={async () => {
                     'use server';
                     await signIn(socialPlatform.id);
