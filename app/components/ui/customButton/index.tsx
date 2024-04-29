@@ -1,20 +1,16 @@
-"use client";
+'use client';
 
 // external
-import { Button, ButtonProps } from "@chakra-ui/react";
+import { Button, ButtonProps } from '@chakra-ui/react';
 
 interface CustomButtonProps extends ButtonProps {
-  onClick?: React.MouseEventHandler;
   label: string;
+  type: 'button' | 'reset' | 'submit';
+  onClick?: React.MouseEventHandler;
   children?: React.ReactNode;
 }
 
-const CustomButton = ({
-  onClick,
-  label,
-  children,
-  ...props
-}: CustomButtonProps) => {
+const CustomButton = ({ onClick, label, children, ...props }: CustomButtonProps) => {
   return (
     <Button onClick={onClick} {...props}>
       {children}

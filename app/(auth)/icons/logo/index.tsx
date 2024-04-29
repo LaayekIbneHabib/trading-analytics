@@ -1,8 +1,8 @@
 // internal
-import theme from "../../../../theme/theme";
+import theme from '../../../theme/theme';
 // external
-import { Box } from "@chakra-ui/react";
-import { IoIosAnalytics } from "react-icons/io";
+import { Box } from '@chakra-ui/react';
+import { IoIosAnalytics } from 'react-icons/io';
 
 interface LogoProps {
   size: string;

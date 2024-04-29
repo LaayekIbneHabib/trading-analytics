@@ -1,5 +1,5 @@
-"use client";
-import { useEffect } from "react";
+'use client';
+import { useEffect } from 'react';
 import {
   Box,
   BoxProps,
@@ -7,9 +7,9 @@ import {
   Flex,
   Text,
   useColorModeValue,
-} from "@chakra-ui/react";
-import Logo from "../../../../assets/images/icons/logo";
-import { NavItem } from "../navItems";
+} from '@chakra-ui/react';
+import Logo from '../../../../(auth)/icons/logo';
+import { NavItem } from '../navItems';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
@@ -21,18 +21,18 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       if (window.innerWidth > 767) onClose();
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     handleResize();
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, [onClose]);
 
   return (
     <Box
       transition="3s ease"
-      bg={useColorModeValue("white", "gray.900")}
+      bg={useColorModeValue('white', 'gray.900')}
       borderRight="1px"
-      borderRightColor={useColorModeValue("gray.200", "gray.700")}
-      w={{ base: "full", md: 60 }}
+      borderRightColor={useColorModeValue('gray.200', 'gray.700')}
+      w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
       overflow="auto"
@@ -46,7 +46,7 @@ export const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
             ...
           </Text>
         </Flex>
-        <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
+        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       <Flex flexDir="column" gap="1">
         <NavItem />
