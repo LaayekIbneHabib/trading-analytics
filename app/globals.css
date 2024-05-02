@@ -23,10 +23,6 @@ body:focus {
   outline: 0 !important;
 }
 
-body {
-  /* background-color: rgba(93, 135, 255, 0.1) !important; */
-}
-
 /* For WebKit (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
   width: 4px;

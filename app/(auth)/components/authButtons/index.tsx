@@ -1,33 +1,41 @@
 // default
-import React from 'react';
+import { ReactElement } from 'react';
 // external
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Button, ButtonProps } from '@chakra-ui/react';
 
-interface AuthButtonProps {
+interface AuthButtonProps extends ButtonProps {
   label: string;
-  type: 'submit' | 'button' | 'reset';
-  status: string | string;
-  icon?: any;
+  status: 'active' | 'inactive';
+  icon?: ReactElement;
   key?: number | string;
   children?: React.ReactNode;
 }
 
-export const BrokerAuthentication = ({ label, status, children, ...props }: AuthButtonProps) => {
+const commonStyles = {
+  w: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  variant: 'outline',
+  fontWeight: '400',
+};
+
+export const StockBrokerAuthentication = ({
+  status,
+  children,
+  label,
+  ...props
+}: AuthButtonProps) => {
   return (
     <Button
       {...props}
       h="5rem"
-      w="100%"
-      display="flex"
       flexDir="column"
-      justifyContent="center"
-      alignItems="center"
       gap="0.75rem"
-      p="2rem"
       flexGrow="1rem"
+      p="2rem"
       fontSize="xs"
-      fontWeight="400"
-      variant="outline"
+      {...commonStyles}
       isDisabled={status === 'inactive' ? true : false}
     >
       <Box w="1.5rem">{children}</Box>
@@ -36,19 +44,14 @@ export const BrokerAuthentication = ({ label, status, children, ...props }: Auth
   );
 };
 
-export const SocialAuthentication = ({ label, status, icon, ...props }: AuthButtonProps) => {
+export const SocialAuthentication = ({ icon, status, label, ...props }: any) => {
   return (
     <Button
       {...props}
-      w="100%"
       px="1rem"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
       leftIcon={icon}
-      variant="outline"
       fontSize="sm"
-      fontWeight="400"
+      {...commonStyles}
       isDisabled={status === 'inactive' ? true : false}
     >
       Continue with {label}
