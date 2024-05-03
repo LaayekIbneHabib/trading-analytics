@@ -8,7 +8,7 @@ import CustomFooter from '../components/customFooter';
 import CustomContainer from '../components/customContainer';
 import CustomHStack from '../components/customHStack';
 
-export default async function Login() {
+export default function Login() {
   return (
     <CustomContainer>
       <CustomHeading />

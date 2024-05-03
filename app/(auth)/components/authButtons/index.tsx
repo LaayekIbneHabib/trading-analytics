@@ -37,7 +37,7 @@ export const StockBrokerAuthentication = () => {
   );
 };
 
-export const SocialAuthentication = () => {
+export const SocialAuthentication = async () => {
   return (
     <>
       {socialPlatforms.map(socialPlatform => (

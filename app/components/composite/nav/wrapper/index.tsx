@@ -14,7 +14,7 @@ interface WrapperProps {
 
 const Wrapper = ({ children }: WrapperProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // gray.100
+
   return (
     <Box minH="100vh" bg={useColorModeValue('#ffffff', 'gray.900')}>
       <SidebarContent onClose={onClose} display={{ base: 'none', md: 'block' }} />
