@@ -1,4 +1,4 @@
-import FileUpload from "../../../components/composite/fileUpload";
+import FileUpload from '../../components/composite/fileUpload';
 
 const StaticAnalysis = () => {
   return <FileUpload />;

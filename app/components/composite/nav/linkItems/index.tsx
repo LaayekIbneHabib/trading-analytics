@@ -1,14 +1,16 @@
 // external
-import { IconType } from "react-icons";
-import { GoDot } from "react-icons/go";
-import { CgPerformance } from "react-icons/cg";
+import { IconType } from 'react-icons';
+import { FaFileCsv, FaQuestionCircle } from 'react-icons/fa';
+import { RiBillFill } from 'react-icons/ri';
 import {
-  FiHome,
-  FiTrendingUp,
-  FiCompass,
-  FiStar,
-  FiSettings,
-} from "react-icons/fi";
+  MdOutlineStar,
+  MdTrendingUp,
+  MdWaterfallChart,
+  MdEmail,
+  MdSettings,
+  MdManageAccounts,
+  MdLogout,
+} from 'react-icons/md';
 
 interface LinkItemTypes {
   name: string;
@@ -19,49 +21,53 @@ interface LinkItemTypes {
 
 export const LinkItems: LinkItemTypes[] = [
   {
-    name: "Overview",
-    href: "/overview",
-    icon: FiHome,
+    name: 'Favourites',
+    href: '/favourites',
+    icon: MdOutlineStar,
   },
   {
-    name: "Performance",
-    icon: CgPerformance,
+    name: 'Returns',
+    href: '/returns',
+    icon: MdTrendingUp,
+  },
+  {
+    name: 'Risk to reward',
+    href: '/risk-to-reward',
+    icon: MdWaterfallChart,
+  },
+  {
+    name: 'Drop a .csv',
+    href: '/drop-a-csv',
+    icon: FaFileCsv,
+  },
+  {
+    name: 'QnA',
+    href: '/',
+    icon: FaQuestionCircle,
+  },
+  {
+    name: 'Contact support',
+    href: '/',
+    icon: MdEmail,
+  },
+  {
+    name: 'Settings',
+    icon: MdSettings,
     children: [
       {
-        name: "Returns",
-        href: "/performance/returns",
-        icon: FiTrendingUp,
+        name: 'Account',
+        href: '/settings/account',
+        icon: MdManageAccounts,
       },
       {
-        name: "Risk to reward",
-        href: "/performance/risk-to-reward",
-        icon: GoDot,
+        name: 'Billing',
+        href: '/settings/billing',
+        icon: RiBillFill,
       },
       {
-        name: "Email setup",
-        href: "/performance/email-setup",
-        icon: GoDot,
-      },
-    ],
-  },
-  {
-    name: "Explore",
-    href: "/explore",
-    icon: FiCompass,
-  },
-  {
-    name: "Favourites",
-    href: "/favourites",
-    icon: FiStar,
-  },
-  {
-    name: "Settings",
-    icon: FiSettings,
-    children: [
-      {
-        name: "Static Analysis",
-        href: "/settings/static-analysis",
-        icon: GoDot,
+        name: 'Sign out',
+        href: '/',
+        icon: MdLogout,
       },
     ],
   },

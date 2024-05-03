@@ -1,18 +1,12 @@
-"use client";
+'use client';
 
 // default
-import React from "react";
+import React from 'react';
 // internal
-import { SidebarContent } from "../sidebarContent";
-import { MobileNav } from "../mobileNav";
+import { SidebarContent } from '../sidebarContent';
+import { MobileNav } from '../mobileNav';
 // external
-import {
-  Box,
-  useColorModeValue,
-  Drawer,
-  DrawerContent,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, useColorModeValue, Drawer, DrawerContent, useDisclosure } from '@chakra-ui/react';
 
 interface WrapperProps {
   children: React.ReactNode;
@@ -20,13 +14,10 @@ interface WrapperProps {
 
 const Wrapper = ({ children }: WrapperProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  // gray.100
   return (
-    <Box minH="100vh" bg={useColorModeValue("gray.100", "gray.900")}>
-      <SidebarContent
-        onClose={onClose}
-        display={{ base: "none", md: "block" }}
-      />
+    <Box minH="100vh" bg={useColorModeValue('#ffffff', 'gray.900')}>
+      <SidebarContent onClose={onClose} display={{ base: 'none', md: 'block' }} />
       <Drawer
         isOpen={isOpen}
         placement="left"

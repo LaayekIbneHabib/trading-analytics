@@ -4,6 +4,7 @@ import { defaults } from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 // internal
 import theme from '../../../../theme/theme';
+import CustomBorder from '../../customBorder';
 
 const revenueData = [
   {
@@ -44,54 +45,55 @@ defaults.plugins.title.align = 'start';
 
 const VerticalBar = () => {
   const { colorMode } = useColorMode();
+  defaults.plugins.title.color = colorMode === 'light' ? '#000000' : '#ffffff';
 
   return (
-    <Bar
-      style={{
-        backgroundColor: colorMode === 'light' ? '#ffffff' : theme.colors.brand.light,
-        width: '100%',
-        height: '100%',
-        padding: '1rem',
-        borderRadius: '1rem',
-      }}
-      data={{
-        labels: revenueData.map(data => data.label),
-        datasets: [
-          {
-            label: 'net',
-            data: revenueData.map(data => data.net),
-            backgroundColor: revenueData.map(data =>
-              data.net > 1 ? theme.colors.brand.primary : theme.colors.brand.danger,
-            ),
-            borderColor: revenueData.map(data =>
-              data.net > 1 ? theme.colors.brand.primary : theme.colors.brand.danger,
-            ),
-          },
-        ],
-      }}
-      options={{
-        responsive: true,
-        maintainAspectRatio: false,
-        elements: {
-          line: {
-            tension: 0.1,
-          },
-        },
-        scales: {
-          y: {
-            display: false,
-          },
-        },
-        plugins: {
-          title: {
-            font: {
-              size: 15,
+    <CustomBorder sx={{ height: '100%' }}>
+      <Bar
+        style={{
+          width: '100%',
+          padding: '1rem',
+          borderRadius: '1rem',
+        }}
+        data={{
+          labels: revenueData.map(data => data.label),
+          datasets: [
+            {
+              label: 'net',
+              data: revenueData.map(data => data.net),
+              backgroundColor: revenueData.map(data =>
+                data.net > 1 ? theme.colors.brand.primary : theme.colors.brand.danger,
+              ),
+              borderColor: revenueData.map(data =>
+                data.net > 1 ? theme.colors.brand.primary : theme.colors.brand.danger,
+              ),
             },
-            text: 'Last 7 days',
+          ],
+        }}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false,
+          elements: {
+            line: {
+              tension: 0.1,
+            },
           },
-        },
-      }}
-    />
+          scales: {
+            y: {
+              display: false,
+            },
+          },
+          plugins: {
+            title: {
+              font: {
+                size: 15,
+              },
+              text: 'Last 7 days',
+            },
+          },
+        }}
+      />
+    </CustomBorder>
   );
 };
 

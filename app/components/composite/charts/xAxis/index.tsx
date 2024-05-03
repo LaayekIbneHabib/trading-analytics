@@ -4,6 +4,7 @@ import { defaults } from 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
 // internal
 import theme from '../../../../theme/theme';
+import CustomBorder from '../../customBorder';
 
 const revenueData = [
   {
@@ -68,48 +69,48 @@ const XAxis = () => {
   defaults.plugins.title.color = colorMode === 'light' ? '#000000' : '#ffffff';
 
   return (
-    <Line
-      style={{
-        backgroundColor: colorMode === 'light' ? '#ffffff' : theme.colors.brand.light,
-        width: '100%',
-        height: '100%',
-        padding: '1rem',
-        borderRadius: '1rem',
-      }}
-      data={{
-        labels: revenueData.map(data => data.label),
-        datasets: [
-          {
-            label: '45%',
-            data: revenueData.map(data => data.revenue),
-            backgroundColor: theme.colors.brand.primary,
-            borderColor: theme.colors.brand.primary,
-          },
-        ],
-      }}
-      options={{
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: {
-            position: 'right',
-          },
-        },
-        elements: {
-          line: {
-            tension: 0.1,
-          },
-        },
-        plugins: {
-          title: {
-            font: {
-              size: 15,
+    <CustomBorder sx={{ height: '100%' }}>
+      <Line
+        style={{
+          width: '100%',
+          height: '100%',
+          padding: '1rem',
+        }}
+        data={{
+          labels: revenueData.map(data => data.label),
+          datasets: [
+            {
+              label: '45%',
+              data: revenueData.map(data => data.revenue),
+              backgroundColor: theme.colors.brand.primary,
+              borderColor: theme.colors.brand.primary,
             },
-            text: 'Projected Returns',
+          ],
+        }}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              position: 'right',
+            },
           },
-        },
-      }}
-    />
+          elements: {
+            line: {
+              tension: 0.1,
+            },
+          },
+          plugins: {
+            title: {
+              font: {
+                size: 15,
+              },
+              text: 'Projected Returns',
+            },
+          },
+        }}
+      />
+    </CustomBorder>
   );
 };
 
