@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { LinkProps } from 'next/link';
 
 interface CustomLinkProps extends LinkProps {
-  color: string;
   href: string;
   children: React.ReactNode;
+  color?: string;
 }
 
-const CustomLink = ({ color, href, children, ...props }: CustomLinkProps) => {
+const CustomLink = ({ href, children, color, ...props }: CustomLinkProps) => {
   return (
     <Link {...props} href={href} style={{ textDecoration: 'none', color: color }}>
       {children}
