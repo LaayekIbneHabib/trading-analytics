@@ -1,17 +1,16 @@
 // external
-import { Link, LinkProps } from '@chakra-ui/next-js';
+import Link from 'next/link';
+import { LinkProps } from 'next/link';
 
 interface CustomLinkProps extends LinkProps {
+  color: string;
   href: string;
   children: React.ReactNode;
 }
 
-const CustomLink = ({ children, href, ...props }: CustomLinkProps) => {
-  const styles = {
-    _hover: { textDecor: 'none' },
-  };
+const CustomLink = ({ color, href, children, ...props }: CustomLinkProps) => {
   return (
-    <Link href={href} {...props} sx={styles}>
+    <Link {...props} href={href} style={{ textDecoration: 'none', color: color }}>
       {children}
     </Link>
   );

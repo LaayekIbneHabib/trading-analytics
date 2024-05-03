@@ -8,12 +8,7 @@ const CustomFooter = () => {
   return (
     <Text fontSize="sm" fontWeight="400">
       By proceeding, you agree to our{' '}
-      <CustomLink
-        href=""
-        style={{
-          color: theme.colors.brand.primary,
-        }}
-      >
+      <CustomLink href="" color={theme.colors.brand.primary}>
         terms and conditions.
       </CustomLink>
     </Text>
