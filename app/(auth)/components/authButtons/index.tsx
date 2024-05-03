@@ -1,15 +1,8 @@
-// default
-import { ReactElement } from 'react';
 // external
-import { Box, Button, ButtonProps } from '@chakra-ui/react';
-
-interface AuthButtonProps extends ButtonProps {
-  label: string;
-  status: 'active' | 'inactive';
-  icon?: ReactElement;
-  key?: number | string;
-  children?: React.ReactNode;
-}
+import { Box, Button, ButtonGroup } from '@chakra-ui/react';
+// internal
+import { stockBrokers, socialPlatforms } from '../../icons';
+import { signIn } from '../../../../auth';
 
 const commonStyles = {
   w: '100%',
@@ -20,41 +13,52 @@ const commonStyles = {
   fontWeight: '400',
 };
 
-export const StockBrokerAuthentication = ({
-  status,
-  children,
-  label,
-  ...props
-}: AuthButtonProps) => {
+export const StockBrokerAuthentication = () => {
   return (
-    <Button
-      {...props}
-      h="5rem"
-      flexDir="column"
-      gap="0.75rem"
-      flexGrow="1rem"
-      p="2rem"
-      fontSize="xs"
-      {...commonStyles}
-      isDisabled={status === 'inactive' ? true : false}
-    >
-      <Box w="1.5rem">{children}</Box>
-      {label}
-    </Button>
+    <ButtonGroup variant="secondary" spacing="4">
+      {stockBrokers.map(stockBroker => (
+        <Button
+          key={stockBroker.id}
+          h="5rem"
+          flexDir="column"
+          gap="0.75rem"
+          flexGrow="1rem"
+          p="2rem"
+          fontSize="xs"
+          {...commonStyles}
+          type="submit"
+          isDisabled={stockBroker.status === 'inactive' ? true : false}
+        >
+          <Box w="1.5rem">{stockBroker.icon}</Box>
+          {stockBroker.label}
+        </Button>
+      ))}
+    </ButtonGroup>
   );
 };
 
-export const SocialAuthentication = ({ icon, status, label, ...props }: any) => {
+export const SocialAuthentication = () => {
   return (
-    <Button
-      {...props}
-      px="1rem"
-      leftIcon={icon}
-      fontSize="sm"
-      {...commonStyles}
-      isDisabled={status === 'inactive' ? true : false}
-    >
-      Continue with {label}
-    </Button>
+    <>
+      {socialPlatforms.map(socialPlatform => (
+        <form
+          key={socialPlatform.id}
+          action={async () => {
+            'use server';
+            await signIn(socialPlatform.id);
+          }}
+        >
+          <Button
+            px="1rem"
+            leftIcon={socialPlatform.icon}
+            fontSize="sm"
+            {...commonStyles}
+            isDisabled={socialPlatform.status === 'inactive' ? true : false}
+          >
+            Continue with {socialPlatform.label}
+          </Button>
+        </form>
+      ))}
+    </>
   );
 };
