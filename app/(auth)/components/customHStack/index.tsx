@@ -6,7 +6,7 @@ const CustomHStack = () => {
     <HStack>
       <Divider />
       <Text textStyle="sm" whiteSpace="nowrap">
-        Don't have a broker account?
+        Don&apos;t have a broker account?
       </Text>
       <Divider />
     </HStack>
