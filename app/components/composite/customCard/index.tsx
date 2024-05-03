@@ -1,48 +1,45 @@
 // external
-import { Box, Text, useColorMode } from "@chakra-ui/react";
+import { Stack, Text, useColorMode } from '@chakra-ui/react';
+// internal
+import theme from '../../../theme/theme';
 
 interface CustomCardProps {
   type: string;
+  symbol: string;
   heading: string;
   label: string;
-  value: number[];
+  value: number | number[];
   caption: string;
 }
 
-interface ReturnCustomCardProps {
+interface RestoreCustomCardProps {
   data: CustomCardProps;
 }
 
-const CustomCard = ({ data }: ReturnCustomCardProps) => {
+const CustomCard = ({ data }: RestoreCustomCardProps) => {
   const { colorMode } = useColorMode();
 
-  const forTypeRatio = data.value[0] + ":" + data.value[1];
-  const forTypePercentage = data.value[0] + "%";
-
   return (
-    <Box
+    <Stack
+      flexDir="column"
+      justifyContent="space-between"
+      alignItems="left"
+      width="100%"
+      height="100%"
+      p="1rem"
+      borderRadius="1rem"
       style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "left",
-        backgroundColor:
-          colorMode === "light" ? "#ffffff" : "rgba(255, 255, 255, 0.1)",
-        width: "100%",
-        height: "100%",
-        padding: "1rem",
+        backgroundColor: colorMode === 'light' ? '#ffffff' : theme.colors.brand.light,
       }}
     >
-      <Text as="h2" fontWeight="700">
-        {data.heading}
-      </Text>
+      <Text fontWeight="700">{data.heading}</Text>
       <Text>{data.label}</Text>
       <Text fontSize="7rem" fontWeight="700" color="brand.primary">
-        {data.type === "percentage" ? forTypePercentage : ""}
-        {data.type === "ratio" ? forTypeRatio : ""}
+        {data.value}
+        {data.symbol}
       </Text>
       <Text>{data.caption}</Text>
-    </Box>
+    </Stack>
   );
 };
 

@@ -1,57 +1,57 @@
-// internal
-import theme from "../../../../theme/theme";
 // external
-import { useColorMode } from "@chakra-ui/react";
-import { Chart as ChartJS, defaults } from "chart.js/auto";
-import { Line } from "react-chartjs-2";
+import { useColorMode } from '@chakra-ui/react';
+import { defaults } from 'chart.js/auto';
+import { Line } from 'react-chartjs-2';
+// internal
+import theme from '../../../../theme/theme';
 
 const revenueData = [
   {
-    label: "Jan",
+    label: 'Jan',
     revenue: 54,
   },
   {
-    label: "Feb",
+    label: 'Feb',
     revenue: 28,
   },
   {
-    label: "Mar",
+    label: 'Mar',
     revenue: 238,
   },
   {
-    label: "Apr",
+    label: 'Apr',
     revenue: 30,
   },
   {
-    label: "May",
+    label: 'May',
     revenue: 8,
   },
   {
-    label: "Jun",
+    label: 'Jun',
     revenue: 609,
   },
   {
-    label: "Jul",
+    label: 'Jul',
     revenue: 74,
   },
   {
-    label: "Aug",
+    label: 'Aug',
     revenue: 74,
   },
   {
-    label: "Sep",
+    label: 'Sep',
     revenue: 74,
   },
   {
-    label: "Oct",
+    label: 'Oct',
     revenue: 74,
   },
   {
-    label: "Nov",
+    label: 'Nov',
     revenue: 74,
   },
   {
-    label: "Dec",
+    label: 'Dec',
     revenue: 74,
   },
 ];
@@ -60,30 +60,30 @@ defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 defaults.color = theme.colors.brand.primary;
 defaults.plugins.title.display = true;
-defaults.plugins.title.align = "start";
-defaults.plugins.title.color = "#000000";
+defaults.plugins.title.align = 'start';
+defaults.plugins.title.color = '#000000';
 
 const XAxis = () => {
   const { colorMode } = useColorMode();
-  defaults.plugins.title.color = colorMode === "light" ? "#000000" : "#ffffff";
+  defaults.plugins.title.color = colorMode === 'light' ? '#000000' : '#ffffff';
 
   return (
     <Line
       style={{
-        backgroundColor:
-          colorMode === "light" ? "#ffffff" : "rgba(255, 255, 255, 0.1)",
-        width: "100%",
-        height: "100%",
-        padding: "1rem",
+        backgroundColor: colorMode === 'light' ? '#ffffff' : theme.colors.brand.light,
+        width: '100%',
+        height: '100%',
+        padding: '1rem',
+        borderRadius: '1rem',
       }}
       data={{
-        labels: revenueData.map((data) => data.label),
+        labels: revenueData.map(data => data.label),
         datasets: [
           {
-            label: "45%",
-            data: revenueData.map((data) => data.revenue),
-            backgroundColor: "#064FF0",
-            borderColor: "#064FF0",
+            label: '45%',
+            data: revenueData.map(data => data.revenue),
+            backgroundColor: theme.colors.brand.primary,
+            borderColor: theme.colors.brand.primary,
           },
         ],
       }}
@@ -92,7 +92,7 @@ const XAxis = () => {
         maintainAspectRatio: false,
         scales: {
           y: {
-            position: "right",
+            position: 'right',
           },
         },
         elements: {
@@ -105,7 +105,7 @@ const XAxis = () => {
             font: {
               size: 15,
             },
-            text: "Projected Returns",
+            text: 'Projected Returns',
           },
         },
       }}

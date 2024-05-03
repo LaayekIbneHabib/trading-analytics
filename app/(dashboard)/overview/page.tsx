@@ -1,7 +1,7 @@
 // internal
 import Board from '../../components/composite/kanban/board';
 
-const Overview = async () => {
+const Overview = () => {
   return <Board />;
 };
 

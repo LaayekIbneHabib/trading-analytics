@@ -1,9 +1,7 @@
-// default
-import React from "react";
-// internal
-import Wrapper from "../components/composite/nav/wrapper";
 // external
-import { Container } from "@chakra-ui/react";
+import { Container } from '@chakra-ui/react';
+// internal
+import Wrapper from '../components/composite/nav/wrapper';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,10 +9,8 @@ interface LayoutProps {
 
 export default async function Layout({ children }: LayoutProps) {
   return (
-    <React.Fragment>
-      <Wrapper>
-        <Container maxW="container.xl">{children}</Container>
-      </Wrapper>
-    </React.Fragment>
+    <Wrapper>
+      <Container maxW="container.xl">{children}</Container>
+    </Wrapper>
   );
 }

@@ -1,68 +1,68 @@
-// interal
-import theme from "../../../../theme/theme";
-import { useColorMode } from "@chakra-ui/react";
 // external
-import { Chart as ChartJS, defaults } from "chart.js/auto";
-import { Line } from "react-chartjs-2";
+import { defaults } from 'chart.js/auto';
+import { Line } from 'react-chartjs-2';
+// interal
+import theme from '../../../../theme/theme';
+import { useColorMode } from '@chakra-ui/react';
 
 const revenueData = [
   {
-    label: "Jan",
+    label: 'Jan',
     you: 12,
     nifty50: 6,
   },
   {
-    label: "Feb",
+    label: 'Feb',
     you: -6,
     nifty50: 2,
   },
   {
-    label: "Mar",
+    label: 'Mar',
     you: -15,
     nifty50: 3,
   },
   {
-    label: "Apr",
+    label: 'Apr',
     you: -35,
     nifty50: 16,
   },
   {
-    label: "May",
+    label: 'May',
     you: 25,
     nifty50: 19,
   },
   {
-    label: "Jun",
+    label: 'Jun',
     you: 45,
     nifty50: 24,
   },
   {
-    label: "Jul",
+    label: 'Jul',
     you: 76,
     nifty50: 32,
   },
   {
-    label: "Aug",
+    label: 'Aug',
     you: 64,
     nifty50: 36,
   },
   {
-    label: "Sep",
+    label: 'Sep',
     you: 32,
     nifty50: 24,
   },
   {
-    label: "Oct",
+    label: 'Oct',
     you: 89,
     nifty50: 29,
   },
   {
-    label: "Nov",
+    label: 'Nov',
     you: 12,
     nifty50: 37,
   },
   {
-    label: "Dec",
+    label: 'Dec',
     you: 78,
     nifty50: 45,
   },
@@ -72,35 +72,35 @@ defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 defaults.color = theme.colors.brand.primary;
 defaults.plugins.title.display = true;
-defaults.plugins.title.align = "start";
+defaults.plugins.title.align = 'start';
 
 const MultipleXAxis = () => {
   const { colorMode } = useColorMode();
-  defaults.plugins.title.color = colorMode === "light" ? "#000000" : "#ffffff";
+  defaults.plugins.title.color = colorMode === 'light' ? '#000000' : '#ffffff';
 
   return (
     <Line
       style={{
-        backgroundColor:
-          colorMode === "light" ? "#ffffff" : "rgba(255, 255, 255, 0.1)",
-        width: "100%",
-        height: "100%",
-        padding: "1rem",
+        backgroundColor: colorMode === 'light' ? '#ffffff' : theme.colors.brand.light,
+        width: '100%',
+        height: '100%',
+        padding: '1rem',
+        borderRadius: '1rem',
       }}
       data={{
-        labels: revenueData.map((data) => data.label),
+        labels: revenueData.map(data => data.label),
         datasets: [
           {
-            label: "You",
-            data: revenueData.map((data) => data.you),
-            backgroundColor: "#064FF0",
-            borderColor: "#064FF0",
+            label: 'You',
+            data: revenueData.map(data => data.you),
+            backgroundColor: theme.colors.brand.primary,
+            borderColor: theme.colors.brand.primary,
           },
           {
-            label: "Nifty 50",
-            data: revenueData.map((data) => data.nifty50),
-            backgroundColor: "#FF3030",
-            borderColor: "#FF3030",
+            label: 'Nifty 50',
+            data: revenueData.map(data => data.nifty50),
+            backgroundColor: theme.colors.brand.danger,
+            borderColor: theme.colors.brand.danger,
           },
         ],
       }}
@@ -109,7 +109,7 @@ const MultipleXAxis = () => {
         maintainAspectRatio: false,
         scales: {
           y: {
-            position: "right",
+            position: 'right',
           },
         },
         elements: {
@@ -122,7 +122,7 @@ const MultipleXAxis = () => {
             font: {
               size: 15,
             },
-            text: "You vs Nifty 50",
+            text: 'You vs Nifty 50',
           },
         },
       }}

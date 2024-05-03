@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
 // default
-import { useState } from "react";
+import { useState } from 'react';
 // internal
-import theme from "../../../theme/theme";
+import theme from '../../../theme/theme';
 // external
-import { Flex, Text } from "@chakra-ui/react";
-import { FiUploadCloud } from "react-icons/fi";
-import { useDropzone } from "react-dropzone";
+import { Flex, Text } from '@chakra-ui/react';
+import { FiUploadCloud } from 'react-icons/fi';
+import { useDropzone } from 'react-dropzone';
 
 const FileUpload = () => {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   const { getRootProps, getInputProps } = useDropzone({
-    onDrop: (acceptedFiles) => {
+    onDrop: acceptedFiles => {
       setUploadedFiles(
-        acceptedFiles.map((file) =>
+        acceptedFiles.map(file =>
           Object.assign(file, {
-            preview: "csv",
-          })
-        )
+            preview: 'csv',
+          }),
+        ),
       );
     },
   });
@@ -44,21 +44,19 @@ const FileUpload = () => {
     >
       <FiUploadCloud
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: theme.colors.brand.hover,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: theme.colors.brand.light,
           borderRadius: 6,
-          padding: ".5rem",
+          padding: '.5rem',
           color: theme.colors.brand.primary,
-          fontSize: "2.75rem",
+          fontSize: '2.75rem',
         }}
       />
       <input {...getInputProps()} />
       <Text>
-        <span style={{ color: theme.colors.brand.primary }}>
-          Click to upload{" "}
-        </span>
+        <span style={{ color: theme.colors.brand.primary }}>Click to upload </span>
         or drag and drop
       </Text>
       <Text fontSize={12}>CSV upto 2MB</Text>

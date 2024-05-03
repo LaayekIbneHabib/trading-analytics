@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
 //default
-import React, { useState } from "react";
-import { usePathname } from "next/navigation";
+import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 // internal
-import CustomLink from "../../../ui/customLink";
-import { LinkItems as items } from "../linkItems";
-import SubnavItems from "./subnavItems";
+import CustomLink from '../../../ui/customLink';
+import { LinkItems as items } from '../linkItems';
+import SubnavItems from './subnavItems';
 // external
-import { Flex, Icon } from "@chakra-ui/react";
-import { IoIosArrowUp } from "react-icons/io";
-import { IoIosArrowDown } from "react-icons/io";
+import { Flex, Icon } from '@chakra-ui/react';
+import { IoIosArrowUp } from 'react-icons/io';
+import { IoIosArrowDown } from 'react-icons/io';
 
 export const NavItem = () => {
   const [isOpen, setOpen] = useState(null);
@@ -21,27 +21,25 @@ export const NavItem = () => {
     const isHovered = pathname !== item.href && isOpen !== index;
 
     return {
-      bgColor: isActive ? "brand.primary" : "transparent",
-      color: isActive ? "#ffffff" : "",
-      _hover: isHovered
-        ? { bgColor: "brand.hover", color: "brand.primary" }
-        : null,
+      bgColor: isActive ? 'brand.primary' : 'transparent',
+      color: isActive ? '#ffffff' : '',
+      _hover: isHovered ? { bgColor: 'brand.light', color: 'brand.primary' } : null,
     };
   };
 
   const handleClick = (index: any) => {
-    setOpen((prevIndex) => (prevIndex === index ? null : index));
+    setOpen(prevIndex => (prevIndex === index ? null : index));
   };
 
   return (
     <>
       {items.map((item, index) => (
         <React.Fragment key={index}>
-          <CustomLink href={item.href ? item.href : ""}>
+          <CustomLink href={item.href ? item.href : ''}>
             <Flex
-              pl={"4"}
-              pt={"3"}
-              pb={"3"}
+              pl={'4'}
+              pt={'3'}
+              pb={'3'}
               mx="4"
               justify="space-between"
               align="center"
@@ -66,9 +64,7 @@ export const NavItem = () => {
               )}
             </Flex>
           </CustomLink>
-          {item.children && isOpen === index && (
-            <SubnavItems items={item.children} />
-          )}
+          {item.children && isOpen === index && <SubnavItems items={item.children} />}
         </React.Fragment>
       ))}
     </>
