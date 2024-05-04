@@ -1,3 +1,5 @@
+'use client';
+
 // external
 import { extendTheme } from '@chakra-ui/react';
 import '@fontsource/roboto/700.css';

@@ -7,7 +7,7 @@ import { Flex, Text } from '@chakra-ui/react';
 import { FiUploadCloud } from 'react-icons/fi';
 import { useDropzone } from 'react-dropzone';
 // internal
-import theme from '../../../theme/theme';
+import theme from '@/app/theme/theme';
 import CustomBorder from '../customBorder';
 
 const FileUpload = () => {

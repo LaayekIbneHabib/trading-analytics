@@ -2,8 +2,6 @@
 import { Box, Button, Flex, Text } from '@chakra-ui/react';
 import { FaArrowRightFromBracket } from 'react-icons/fa6';
 import { IoShieldCheckmarkOutline } from 'react-icons/io5';
-// internal
-import theme from '../../../theme/theme';
 
 const GoToQnAButton = () => {
   return (
@@ -21,7 +19,7 @@ const GoToQnAButton = () => {
           <IoShieldCheckmarkOutline style={{ color: '#5d87ff' }} size="2rem" />
         </Box>
         <Flex flexDir="column" textAlign="left" gap=".25rem">
-          <Text color={theme.colors.brand.primary} fontSize="sm" fontWeight="700">
+          <Text color="brand.primary" fontSize="sm" fontWeight="700">
             Is it safe to login with my broker?
           </Text>
           <Text fontSize="sm" fontWeight="400">

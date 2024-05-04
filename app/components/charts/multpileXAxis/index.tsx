@@ -1,59 +1,71 @@
 // external
-import { useColorMode } from '@chakra-ui/react';
 import { defaults } from 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
-// internal
-import theme from '../../../../theme/theme';
+// interal
+import theme from '@/app/theme/theme';
+import { useColorMode } from '@chakra-ui/react';
 import CustomBorder from '../../customBorder';
 
 const revenueData = [
   {
     label: 'Jan',
-    revenue: 54,
+    you: 12,
+    nifty50: 6,
   },
   {
     label: 'Feb',
-    revenue: 28,
+    you: -6,
+    nifty50: 2,
   },
   {
     label: 'Mar',
-    revenue: 238,
+    you: -15,
+    nifty50: 3,
   },
   {
     label: 'Apr',
-    revenue: 30,
+    you: -35,
+    nifty50: 16,
   },
   {
     label: 'May',
-    revenue: 8,
+    you: 25,
+    nifty50: 19,
   },
   {
     label: 'Jun',
-    revenue: 609,
+    you: 45,
+    nifty50: 24,
   },
   {
     label: 'Jul',
-    revenue: 74,
+    you: 76,
+    nifty50: 32,
   },
   {
     label: 'Aug',
-    revenue: 74,
+    you: 64,
+    nifty50: 36,
   },
   {
     label: 'Sep',
-    revenue: 74,
+    you: 32,
+    nifty50: 24,
   },
   {
     label: 'Oct',
-    revenue: 74,
+    you: 89,
+    nifty50: 29,
   },
   {
     label: 'Nov',
-    revenue: 74,
+    you: 12,
+    nifty50: 37,
   },
   {
     label: 'Dec',
-    revenue: 74,
+    you: 78,
+    nifty50: 45,
   },
 ];
 
@@ -62,9 +74,8 @@ defaults.responsive = true;
 defaults.color = theme.colors.brand.primary;
 defaults.plugins.title.display = true;
 defaults.plugins.title.align = 'start';
-defaults.plugins.title.color = '#000000';
 
-const XAxis = () => {
+const MultipleXAxis = () => {
   const { colorMode } = useColorMode();
   defaults.plugins.title.color = colorMode === 'light' ? '#000000' : '#ffffff';
 
@@ -80,10 +91,16 @@ const XAxis = () => {
           labels: revenueData.map(data => data.label),
           datasets: [
             {
-              label: '45%',
-              data: revenueData.map(data => data.revenue),
+              label: 'You',
+              data: revenueData.map(data => data.you),
               backgroundColor: theme.colors.brand.primary,
               borderColor: theme.colors.brand.primary,
+            },
+            {
+              label: 'Nifty 50',
+              data: revenueData.map(data => data.nifty50),
+              backgroundColor: theme.colors.brand.danger,
+              borderColor: theme.colors.brand.danger,
             },
           ],
         }}
@@ -105,7 +122,7 @@ const XAxis = () => {
               font: {
                 size: 15,
               },
-              text: 'Projected Returns',
+              text: 'You vs Nifty 50',
             },
           },
         }}
@@ -114,4 +131,4 @@ const XAxis = () => {
   );
 };
 
-export default XAxis;
+export default MultipleXAxis;

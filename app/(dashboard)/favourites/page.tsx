@@ -1,5 +1,5 @@
 // internal
-import Board from '../../components/composite/kanban/board';
+import Board from '@/app/components/kanban/board';
 
 const Favourites = () => {
   return <Board />;

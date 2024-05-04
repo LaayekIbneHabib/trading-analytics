@@ -3,14 +3,15 @@
 //default
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
-// internal
-import CustomLink from '../../../ui/customLink';
-import { LinkItems as items } from '../linkItems';
-import SubnavItems from './subnavItems';
 // external
 import { Flex, Icon } from '@chakra-ui/react';
 import { IoIosArrowUp } from 'react-icons/io';
 import { IoIosArrowDown } from 'react-icons/io';
+// internal
+import CustomLink from '@/app/components/customLink';
+import { LinkItems as items } from '../linkItems';
+import SubnavItems from './subnavItems';
+import theme from '@/app/theme/theme';
 
 export const NavItem = () => {
   const [isOpen, setOpen] = useState(null);
@@ -21,9 +22,11 @@ export const NavItem = () => {
     const isHovered = pathname !== item.href && isOpen !== index;
 
     return {
-      bgColor: isActive ? 'brand.primary' : 'transparent',
+      bgColor: isActive ? theme.colors.brand.primary : 'transparent',
       color: isActive ? '#ffffff' : '',
-      _hover: isHovered ? { bgColor: 'brand.light', color: 'brand.primary' } : null,
+      _hover: isHovered
+        ? { bgColor: theme.colors.brand.light, color: theme.colors.brand.primary }
+        : null,
     };
   };
 

@@ -1,11 +1,12 @@
-"use client";
+'use client';
 
 // default
-import { usePathname } from "next/navigation";
-// internal
-import CustomLink from "../../../../ui/customLink";
+import { usePathname } from 'next/navigation';
 // external
-import { Flex, Icon } from "@chakra-ui/react";
+import { Flex, Icon } from '@chakra-ui/react';
+// internal
+import CustomLink from '@/app/components/customLink';
+import theme from '@/app/theme/theme';
 
 interface SubnavItemsProps {
   items: any[];
@@ -25,8 +26,8 @@ const SubnavItems = ({ items }: SubnavItemsProps) => {
             borderRadius="lg"
             role="group"
             cursor="pointer"
-            color={pathname === item.href ? "brand.primary" : ""}
-            _hover={{ color: "brand.primary" }}
+            color={pathname === item.href ? theme.colors.brand.primary : ''}
+            _hover={{ color: theme.colors.brand.primary }}
           >
             {<Icon mr="4" fontSize="12" as={item.icon} />}
             {item.name}

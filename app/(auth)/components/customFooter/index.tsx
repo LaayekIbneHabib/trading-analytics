@@ -1,8 +1,8 @@
 // external
 import { Text } from '@chakra-ui/react';
 // internal
+import CustomLink from '../../../components/customLink';
 import theme from '../../../theme/theme';
-import CustomLink from '../../../components/ui/customLink';
 
 const CustomFooter = () => {
   return (

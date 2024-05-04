@@ -9,7 +9,6 @@ import {
   MdEmail,
   MdSettings,
   MdManageAccounts,
-  MdLogout,
 } from 'react-icons/md';
 
 interface LinkItemTypes {
@@ -63,11 +62,6 @@ export const LinkItems: LinkItemTypes[] = [
         name: 'Billing',
         href: '/settings/billing',
         icon: RiBillFill,
-      },
-      {
-        name: 'Sign out',
-        href: '/',
-        icon: MdLogout,
       },
     ],
   },

@@ -26,6 +26,7 @@ import {
 } from '@chakra-ui/react';
 import { FaMoon, FaSun, FaBell } from 'react-icons/fa';
 import { FiMenu, FiChevronDown } from 'react-icons/fi';
+import { useSession } from 'next-auth/react';
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;
@@ -33,8 +34,12 @@ interface MobileProps extends FlexProps {
 
 let disableMenuBtn: any;
 
-export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+export const TopNav = ({ onOpen, ...rest }: MobileProps) => {
+  const session = useSession();
   const { colorMode, toggleColorMode } = useColorMode();
+
+  const profilePic = session?.data?.user?.image ? session?.data?.user?.image : '';
+  const name = session?.data?.user?.name ? session?.data?.user?.name : '';
 
   return (
     <Flex
@@ -79,14 +84,14 @@ export const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
           <Menu>
             <MenuButton py={2} transition="all 0.3s" _focus={{ boxShadow: 'none' }}>
               <HStack>
-                <Avatar size={'sm'} src={'https://avatars.githubusercontent.com/u/81955896?v=4'} />
+                <Avatar size={'sm'} src={profilePic} />
                 <VStack
                   display={{ base: 'none', md: 'flex' }}
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2"
                 >
-                  <Text fontSize="sm">Laayek Ibne Habib</Text>
+                  <Text fontSize="sm">{name}</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>

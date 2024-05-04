@@ -3,7 +3,7 @@ import { useColorMode } from '@chakra-ui/react';
 import { defaults } from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 // internal
-import theme from '../../../../theme/theme';
+import theme from '@/app/theme/theme';
 import CustomBorder from '../../customBorder';
 
 const revenueData = [

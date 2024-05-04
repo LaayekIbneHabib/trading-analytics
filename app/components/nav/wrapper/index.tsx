@@ -4,7 +4,7 @@
 import React from 'react';
 // internal
 import { SidebarContent } from '../sidebarContent';
-import { MobileNav } from '../mobileNav';
+import { TopNav } from '../topNav';
 // external
 import { Box, useColorModeValue, Drawer, DrawerContent, useDisclosure } from '@chakra-ui/react';
 
@@ -30,7 +30,7 @@ const Wrapper = ({ children }: WrapperProps) => {
           <SidebarContent onClose={onClose} />
         </DrawerContent>
       </Drawer>
-      <MobileNav onOpen={onOpen} />
+      <TopNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} py="4" overflowX="hidden">
         {children}
       </Box>

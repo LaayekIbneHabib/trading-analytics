@@ -1,7 +1,7 @@
 // external
 import { Container } from '@chakra-ui/react';
 // internal
-import Wrapper from '../components/composite/nav/wrapper';
+import Wrapper from '../components/nav/wrapper';
 
 interface LayoutProps {
   children: React.ReactNode;

@@ -1,12 +1,12 @@
 'use client';
 
 // external
-import MultipleXAxis from '../../components/composite/charts/multpileXAxis';
-import VerticalBar from '../../components/composite/charts/verticalBar';
-import XAxis from '../../components/composite/charts/xAxis';
+import MultipleXAxis from '@/app/components/charts/multpileXAxis';
+import VerticalBar from '@/app/components/charts/verticalBar';
+import XAxis from '@/app/components/charts/xAxis';
 // internal
-import GridLayout from '../../components/composite/gridLayout';
-import CustomCard from '../../components/composite/customCard';
+import GridLayout from '@/app/components/gridLayout';
+import CustomCard from '@/app/components/customCard';
 
 const Returns = () => {
   const percentageReturns = {
