@@ -27,6 +27,7 @@ import {
 import { FaMoon, FaSun, FaBell } from 'react-icons/fa';
 import { FiMenu, FiChevronDown } from 'react-icons/fi';
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;

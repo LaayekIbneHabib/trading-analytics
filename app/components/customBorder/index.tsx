@@ -1,12 +1,12 @@
 // default
-import React from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
 // external
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
-interface CustomBorderProps {
-  sx?: React.CSSProperties;
-  children: React.ReactNode;
-}
+type CustomBorderProps = {
+  sx?: CSSProperties;
+  children: ReactNode;
+};
 
 const CustomBorder = ({ children, ...props }: CustomBorderProps) => {
   return (

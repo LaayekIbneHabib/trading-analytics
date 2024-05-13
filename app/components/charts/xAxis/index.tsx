@@ -69,11 +69,11 @@ const XAxis = () => {
   defaults.plugins.title.color = colorMode === 'light' ? '#000000' : '#ffffff';
 
   return (
-    <CustomBorder sx={{ height: '100%' }}>
+    <CustomBorder sx={{ height: '100%', width: '100%' }}>
       <Line
         style={{
-          width: '100%',
           height: '100%',
+          width: '100%',
           padding: '1rem',
         }}
         data={{

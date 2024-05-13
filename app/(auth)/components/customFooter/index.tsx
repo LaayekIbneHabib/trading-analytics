@@ -1,16 +1,11 @@
 // external
 import { Text } from '@chakra-ui/react';
-// internal
-import CustomLink from '../../../components/customLink';
-import theme from '../../../theme/theme';
+import Link from 'next/link';
 
 const CustomFooter = () => {
   return (
     <Text fontSize="sm" fontWeight="400">
-      By proceeding, you agree to our{' '}
-      <CustomLink href="" color={theme.colors.brand.primary}>
-        terms and conditions.
-      </CustomLink>
+      By proceeding, you agree to our <Link href="">terms and conditions.</Link>
     </Text>
   );
 };

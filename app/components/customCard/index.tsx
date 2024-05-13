@@ -12,11 +12,11 @@ interface CustomCardProps {
   caption: string;
 }
 
-interface RestoreCustomCardProps {
+interface CombineCustomCardProps {
   data: CustomCardProps;
 }
 
-const CustomCard = ({ data }: RestoreCustomCardProps) => {
+const CustomCard = ({ data }: CombineCustomCardProps) => {
   return (
     <CustomBorder sx={{ height: '100%' }}>
       <Stack

@@ -48,12 +48,12 @@ const VerticalBar = () => {
   defaults.plugins.title.color = colorMode === 'light' ? '#000000' : '#ffffff';
 
   return (
-    <CustomBorder sx={{ height: '100%' }}>
+    <CustomBorder sx={{ height: '100%', width: '100%' }}>
       <Bar
         style={{
+          height: '100%',
           width: '100%',
           padding: '1rem',
-          borderRadius: '1rem',
         }}
         data={{
           labels: revenueData.map(data => data.label),
