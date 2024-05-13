@@ -42,6 +42,7 @@ export const SocialAuthentication = () => {
     <>
       {socialPlatforms.map(socialPlatform => (
         <form
+          key={socialPlatform.id}
           action={async () => {
             'use server';
             await signIn(socialPlatform.id, { redirectTo: '/favourites' });
