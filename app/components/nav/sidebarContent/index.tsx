@@ -3,7 +3,14 @@
 // default
 import { useEffect } from 'react';
 // external
-import { Box, BoxProps, CloseButton, Flex, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box,
+  BoxProps,
+  CloseButton,
+  Flex,
+  Text,
+  useColorModeValue,
+} from '@chakra-ui/react';
 //internal
 import Logo from '@/app/(auth)/icons/logo';
 import { NavItem } from '../navItems';

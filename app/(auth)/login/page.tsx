@@ -1,7 +1,8 @@
 // external
 import { Stack, ButtonGroup } from '@chakra-ui/react';
 // internal
-import { StockBrokerAuthentication, SocialAuthentication } from '../components/authButtons';
+import StockBrokerAuth from '../components/authButtons/stockBrokerAuth';
+import SocialAuth from '../components/authButtons/socialAuth';
 import CustomHeading from '../components/customHeading';
 import GoToQnAButton from '../components/goToQnAButton';
 import CustomFooter from '../components/customFooter';
@@ -15,13 +16,13 @@ export default function Login() {
       <Stack textAlign="center" my="2rem" mx="1rem" gap="1.5rem">
         <Stack>
           <ButtonGroup variant="secondary" spacing="4">
-            <StockBrokerAuthentication />
+            <StockBrokerAuth />
           </ButtonGroup>
           <GoToQnAButton />
         </Stack>
         <Stack gap="1.5rem">
           <CustomHStack />
-          <SocialAuthentication />
+          <SocialAuth />
         </Stack>
         <CustomFooter />
       </Stack>

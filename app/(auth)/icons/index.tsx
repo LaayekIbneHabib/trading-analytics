@@ -1,5 +1,3 @@
-// default
-import { ReactElement } from 'react';
 // internal
 import Upstox from './upstox';
 import Kite from './kite';
@@ -10,22 +8,30 @@ interface StockBrokerProps {
   id: string;
   status: 'active' | 'inactive';
   label: string;
-  icon: ReactElement;
+  icon: React.ReactElement;
 }
 
 export const stockBrokers: StockBrokerProps[] = [
   { id: 'upstox', status: 'active', label: 'Upstox', icon: <Upstox /> },
   { id: 'kite', status: 'inactive', label: 'coming soon', icon: <Kite /> },
-  { id: 'angel-one', status: 'inactive', label: 'coming soon', icon: <AngelOne /> },
+  {
+    id: 'angel-one',
+    status: 'inactive',
+    label: 'coming soon',
+    icon: <AngelOne />,
+  },
 ];
 
-interface SocialPlatformsProps {
+interface SocialPlatformProps {
   id: string;
   status: 'active' | 'inactive';
   label: string;
-  icon: ReactElement;
+  icon: React.ReactElement;
 }
 
-export const socialPlatforms: SocialPlatformsProps[] = [
-  { id: 'google', status: 'active', label: 'Google', icon: <Google /> },
-];
+export const socialPlatform: SocialPlatformProps = {
+  id: 'google',
+  status: 'active',
+  label: 'Google',
+  icon: <Google />,
+};

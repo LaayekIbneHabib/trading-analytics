@@ -25,7 +25,10 @@ export const NavItem = () => {
       bgColor: isActive ? theme.colors.brand.primary : 'transparent',
       color: isActive ? '#ffffff' : '',
       _hover: isHovered
-        ? { bgColor: theme.colors.brand.light, color: theme.colors.brand.primary }
+        ? {
+            bgColor: theme.colors.brand.light,
+            color: theme.colors.brand.primary,
+          }
         : null,
     };
   };
@@ -67,7 +70,9 @@ export const NavItem = () => {
               )}
             </Flex>
           </CustomLink>
-          {item.children && isOpen === index && <SubnavItems items={item.children} />}
+          {item.children && isOpen === index && (
+            <SubnavItems items={item.children} />
+          )}
         </React.Fragment>
       ))}
     </>

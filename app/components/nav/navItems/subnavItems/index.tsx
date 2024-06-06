@@ -29,7 +29,7 @@ const SubnavItems = ({ items }: SubnavItemsProps) => {
             color={pathname === item.href ? theme.colors.brand.primary : ''}
             _hover={{ color: theme.colors.brand.primary }}
           >
-            {<Icon mr="4" fontSize="12" as={item.icon} />}
+            {<Icon mr="4" as={item.icon} />}
             {item.name}
           </Flex>
         </CustomLink>

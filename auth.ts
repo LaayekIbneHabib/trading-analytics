@@ -3,11 +3,6 @@ import NextAuth from 'next-auth';
 // external
 import Google from 'next-auth/providers/google';
 
-export const {
-  handlers: { GET, POST },
-  auth,
-  signIn,
-  signOut,
-} = NextAuth({
+export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [Google],
 });

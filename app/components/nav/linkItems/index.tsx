@@ -1,15 +1,16 @@
 // external
 import { IconType } from 'react-icons';
-import { FaFileCsv, FaQuestionCircle } from 'react-icons/fa';
-import { RiBillFill } from 'react-icons/ri';
 import {
-  MdOutlineStar,
-  MdTrendingUp,
-  MdWaterfallChart,
-  MdEmail,
-  MdSettings,
-  MdManageAccounts,
-} from 'react-icons/md';
+  FaStar,
+  FaChartArea,
+  FaChartPie,
+  FaFileUpload,
+  FaQuestionCircle,
+  FaEnvelope,
+  FaMoneyBill,
+} from 'react-icons/fa';
+import { FaGear } from 'react-icons/fa6';
+import { MdManageAccounts } from 'react-icons/md';
 
 interface LinkItemTypes {
   name: string;
@@ -22,22 +23,22 @@ export const LinkItems: LinkItemTypes[] = [
   {
     name: 'Favourites',
     href: '/favourites',
-    icon: MdOutlineStar,
+    icon: FaStar,
   },
   {
     name: 'Returns',
     href: '/returns',
-    icon: MdTrendingUp,
+    icon: FaChartArea,
   },
   {
     name: 'Risk to reward',
     href: '/risk-to-reward',
-    icon: MdWaterfallChart,
+    icon: FaChartPie,
   },
   {
-    name: 'Drop a .csv',
+    name: 'Upload a .csv',
     href: '/drop-a-csv',
-    icon: FaFileCsv,
+    icon: FaFileUpload,
   },
   {
     name: 'QnA',
@@ -47,11 +48,11 @@ export const LinkItems: LinkItemTypes[] = [
   {
     name: 'Contact support',
     href: '/',
-    icon: MdEmail,
+    icon: FaEnvelope,
   },
   {
     name: 'Settings',
-    icon: MdSettings,
+    icon: FaGear,
     children: [
       {
         name: 'Account',
@@ -61,7 +62,7 @@ export const LinkItems: LinkItemTypes[] = [
       {
         name: 'Billing',
         href: '/settings/billing',
-        icon: RiBillFill,
+        icon: FaMoneyBill,
       },
     ],
   },
